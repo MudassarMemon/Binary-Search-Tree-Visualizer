@@ -1,8 +1,8 @@
-import Example from "./scripts/example";
+// import Example from "./scripts/example";
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Hello world!");
+// document.addEventListener("DOMContentLoaded", function () {
+//   console.log("Hello world!");
 
-  const main = document.getElementById("main");
-  new Example(main);
-});
+//   const main = document.getElementById("main");
+//   new Example(main);
+// });
