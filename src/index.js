@@ -1,8 +1,14 @@
-// import Example from "./scripts/example";
+import Button from "./scripts/button";
+import Canvas from "./scripts/canvas";
+import Tutorial from "./scripts/tutorial";
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   console.log("Hello world!");
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => new Button(button));
 
-//   const main = document.getElementById("main");
-//   new Example(main);
-// });
+  const nav = document.getElementById("open-tutorial");
+  new Tutorial(nav);
+
+  const canvas = document.querySelector(".tree-visual");
+  new Canvas(canvas);
+});
