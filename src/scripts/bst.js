@@ -29,7 +29,7 @@ class BinarySearchTree {
       newNode.level = 0;
       this.root = newNode;
       newNode.circle = new Circle(context, newNode);
-      this.circles.push({ circle: newNode.circle });
+      this.circles.push({ circle: newNode.circle, value: newNode.value });
       return;
     }
 
@@ -50,7 +50,11 @@ class BinarySearchTree {
           current.left = newNode;
           newNode.circle = new Circle(context, newNode);
           newNode.arrow = new Arrow(context, current, current.left);
-          this.circles.push({ circle: newNode.circle, arrow: newNode.arrow });
+          this.circles.push({
+            circle: newNode.circle,
+            arrow: newNode.arrow,
+            value: newNode.value,
+          });
           return;
         } else {
           current = current.left;
@@ -62,7 +66,11 @@ class BinarySearchTree {
           current.right = newNode;
           newNode.circle = new Circle(context, newNode);
           newNode.arrow = new Arrow(context, current, current.right);
-          this.circles.push({ circle: newNode.circle, arrow: newNode.arrow });
+          this.circles.push({
+            circle: newNode.circle,
+            arrow: newNode.arrow,
+            value: newNode.value,
+          });
           return;
         } else {
           current = current.right;
@@ -73,22 +81,48 @@ class BinarySearchTree {
 
   async remove(value) {
     let current = this.root;
-    let previous = null;
+    // let previous = null;
+
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
-    if (current.value === value) {
-      if (previous === null) {
-        let minRightChild = current.right;
 
-        while (minRightChild.left) {
-          minRightChild = minRightChild.left;
+    while (true) {
+      if (current.value === value) {
+        if (current.right) {
+          let minRightChild = current.right;
+
+          while (minRightChild.left) {
+            minRightChild = minRightChild.left;
+          }
+
+          this.circles.forEach((circle) => {
+            if (circle["value"] === current.value) {
+              circle["value"] = minRightChild.value;
+              circle["circle"].value = minRightChild.value;
+            } else if (circle["value"] === minRightChild.value) {
+              circle["value"] = 0;
+              circle["circle"].value = null;
+            }
+          });
+
+          current.value = minRightChild.value;
+          minRightChild.value = 0;
+        } else if (current.left) {
+          current.value = current.left.value;
+          current.left.value = 0;
+        } else {
+          current.value = 0;
         }
 
         await new Promise((resolve) => setTimeout(resolve, 5000));
-        this.root.value = minRightChild.value;
-        this.root.circle.value = this.root.value;
-        this.circles[0]["circle"] = this.root.circle;
-        this.reset();
+        await this.reset();
+        return;
+      } else if (current.value < value) {
+        //traverse right side of bst
+        current = current.right;
+      } else {
+        //traverse left side of bst
+        current = current.right;
       }
     }
   }

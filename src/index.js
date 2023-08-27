@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // test bst deletion
   bst.remove(51);
 
+  // test bst insertion
+  bst.insert(46);
+
   // testing the update methods for circles and arrows for search BST method
   // bst.circles.forEach((circle) => {
   //   circle["circle"].update();
