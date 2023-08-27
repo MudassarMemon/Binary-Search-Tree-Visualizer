@@ -7,68 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Project Name</title>
+    <title>Binary Tree Visualizer</title>
   </head>
 
-  <header>
-    <h1>Binary Tree Bonanza</h1>
-    <button id="open-tutorial">Tutorial</button>
-  </header>
+<header>
+  <h1>Binary Search Tree Visualizer</h1>
+</header>
 
-   <aside id="sidebar">
-      <button id="sidebar">x</button>
-      <button class="open-tutorial" id="tree-tutorial" >Binary Trees</button>
-      <button class="open-tutorial" id="traverse-tutorial">Search Algorithms</button>
-   </aside>
-
-  <body>
-    <div class="container" id="left-container">
-      <ul class="canvas-buttons"> 
-        <li><button class="canvas-buttons" id="add node">add node</button></li>
-        <li><button class="canvas-buttons" id="delete node">delete node</button></li>
-        <li><button class="canvas-buttons" id="delete node">random tree</button></li>
-        <li><button class="canvas-buttons" id="delete node">BFS</button></li>
-        <li><button class="canvas-buttons" id="delete node">DFS</button></li>
-        <li><button class="canvas-buttons" id="delete node">Balance</button></li>
-      </ul>
-      <canvas class="tree-visual"></canvas>
-      </canvas>
+<body>
+  <button id="lessons">Lessons</button>
+  <div id="slide-container">
+    <div class="slide">
+      <button id="prev">Prev</button>
+      <button id="next">Next</button>
+      <button id="close">x</button>
+      <h1>Introduction to Binary Search Trees</h1>
+      <p>Binary Search Trees (BSTs) are...</p>
     </div>
+  </div>
 
-    <div class="container" id="right-container"> 
-      <ul class="change-tab"> 
-        <li><button class="tab-button" id="data-structures">Data Structures</button></li>
-        <li><button class="tab-button" id="algorithm">Algorithms</button></li>
-      </ul>
-
-      <div class="show-tab">
-        <form action="">
-          <textarea name="terminal" id="terminal" cols="30" rows="10" value=""></textarea>
-          <!--add a blinking cursor-->
-          <input type="submit" id="execute" value="Execute">
-        </form>
-      </div>
-      
-      <div class="tutorial" id="data-structures">
-        <button class="nav" id="close">x</button>
-        <h3>Data Structure Tutorial</h3>
-        <p>slides with steps for making binary tree, with next button over opac box</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium quisquam sit nesciunt ullam ut minus exercitationem modi neque dolorem quae dicta mollitia, qui aliquid ad voluptatum eligendi similique quam.</p>
-        <button class="nav" id="prev">prev</button>
-        <button class="nav" id="next">next</button>
-      </div>
-
-      <div class="tutorial" id="algorithm">
-        <button class="nav" id="close">x</button>
-        <h3>Algo Tutorial</h3>
-        <p>slides with steps for searching binary tree, with next button over opac box</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium quisquam sit nesciunt ullam ut minus exercitationem modi neque dolorem quae dicta mollitia, qui aliquid ad voluptatum eligendi similique quam.</p>
-        <button class="nav" id="prev">prev</button>
-        <button class="nav" id="prev">next</button>
-      </div>
-
-    </div>
-      
-  </body>
+  <div id="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+</body>
 
 </html>

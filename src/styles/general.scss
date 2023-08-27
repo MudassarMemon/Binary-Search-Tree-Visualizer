@@ -1,0 +1,13 @@
+header {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+//decorate this lessons icon
+#lessons{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    margin: 5px;
+}
