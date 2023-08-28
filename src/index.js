@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // test bst deletion
   bst.remove(9);
-  bst.remove(62);
+  bst.remove(55);
 
   // test bst search
   // bst.search(62);

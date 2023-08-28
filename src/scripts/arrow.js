@@ -29,21 +29,21 @@ class Arrow {
     }
   }
 
-  update() {
+  update(color = "red", thickness = "3") {
     let offSet = Math.sqrt(20 ** 2 / 2);
 
     if (this.parentVal > this.childVal) {
       this.context.beginPath();
-      this.context.strokeStyle = "red";
-      this.context.lineWidth = "3";
+      this.context.strokeStyle = color;
+      this.context.lineWidth = thickness;
       this.context.moveTo(this.xstart - offSet, this.ystart + offSet);
       this.context.lineTo(this.xend + offSet, this.yend - offSet);
       this.context.stroke();
       this.context.closePath();
     } else {
       this.context.beginPath();
-      this.context.strokeStyle = "red";
-      this.context.lineWidth = "3";
+      this.context.strokeStyle = color;
+      this.context.lineWidth = thickness;
       this.context.moveTo(this.xstart + offSet, this.ystart + offSet);
       this.context.lineTo(this.xend - offSet, this.yend - offSet);
       this.context.stroke();

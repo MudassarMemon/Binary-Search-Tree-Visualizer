@@ -21,10 +21,10 @@ class Circle {
     this.context.closePath();
   }
 
-  update() {
+  update(color = "red", thickness = "3") {
     this.context.beginPath();
-    this.context.strokeStyle = "red";
-    this.context.lineWidth = 3;
+    this.context.strokeStyle = color;
+    this.context.lineWidth = thickness;
     this.context.arc(this.xpos, this.ypos, 22, 0, 2 * Math.PI);
     this.context.stroke();
     this.context.closePath();

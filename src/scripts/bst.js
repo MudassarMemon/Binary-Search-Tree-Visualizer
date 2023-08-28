@@ -112,13 +112,44 @@ class BinarySearchTree {
 
     //traverse BST to search value to remove
     while (true) {
+      //highlighting traversal path
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (current.arrow) {
+        current.arrow.update("purple");
+      }
+
+      //highlighting nodes being traversed
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      current.circle.update("purple");
+
       //found value to remove
       if (current.value === value) {
         //traverse BST to find node to replace removed node
         if (current.right) {
           minChild = current.right;
+
+          // highlighting arrows being traversed
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          if (minChild.arrow) {
+            minChild.arrow.update("green", 10);
+          }
+
+          //highlighting nodes being traversed
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          minChild.circle.update("green", 10);
+
           while (minChild.left) {
             minChild = minChild.left;
+
+            // highlighting arrows being traversed
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            if (minChild.arrow) {
+              minChild.arrow.update("green", 10);
+            }
+
+            //highlighting nodes being traversed
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            minChild.circle.update("green", 10);
           }
         } else if (current.left) {
           //node to remove has no right child, replacing with left child
@@ -191,7 +222,7 @@ class BinarySearchTree {
 
     //traverse bst starting from root node
     while (current) {
-      //highlighting arrows begin traverse
+      //highlighting traversal path
       await new Promise((resolve) => setTimeout(resolve, 1000));
       if (current.arrow) {
         current.arrow.update();
