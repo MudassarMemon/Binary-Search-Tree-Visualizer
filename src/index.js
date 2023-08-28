@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
   bst.insert(66);
 
   // test bst deletion
-  bst.remove(9);
-  bst.remove(55);
+  // bst.remove(9);
+  // bst.remove(62);
 
   // test bst search
-  // bst.search(62);
+  // bst.search(64);
 
   // testing the update methods for circles and arrows for search BST method
   // bst.circles.forEach((circle) => {

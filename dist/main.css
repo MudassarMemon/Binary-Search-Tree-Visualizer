@@ -45,6 +45,12 @@ header {
 
 #canvas-container {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+}
+
+#canvas-buttons {
+  display: flex;
+  align-content: flex-start;
 }
