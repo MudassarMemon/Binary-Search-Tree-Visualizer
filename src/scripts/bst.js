@@ -107,6 +107,17 @@ class BinarySearchTree {
             }
           });
 
+          //making connections to remaining nodes so none are inadvertently orphaned
+          if (previous) {
+            if (current === previous.right) {
+              previous.right = current.right;
+            } else if (current.right) {
+              previous.left = current.right;
+            } else {
+              previous.left = null;
+            }
+          }
+
           current.value = minRightChild.value;
           minRightChild.value = 0;
         } else if (current.left) {
@@ -114,10 +125,6 @@ class BinarySearchTree {
           current.left.value = 0;
         } else {
           current.value = 0;
-        }
-
-        if (previous) {
-          previous.left = null;
         }
 
         this.circles.splice(indexToRemove, 1);
