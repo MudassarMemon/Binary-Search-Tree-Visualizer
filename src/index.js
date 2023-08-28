@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.style.background = "yellow";
 
   //generate random BST
-  const uniqueNums = [51];
+  const uniqueNums = [51, 62, 9];
 
   while (uniqueNums.length < 10) {
     let randomNum = Math.floor(Math.random() * 100);
-    if (!uniqueNums.includes(randomNum)) {
+    if (!uniqueNums.includes(randomNum) && randomNum > 0) {
       uniqueNums.push(randomNum);
     }
   }
@@ -39,13 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
   uniqueNums.forEach((num) => bst.insert(num));
 
   // test bst insertion
-  // bst.insert(51);
+  bst.insert(67);
+  bst.insert(55);
+  bst.insert(64);
+  bst.insert(66);
 
   // test bst deletion
-  bst.remove(51);
+  bst.remove(9);
+  bst.remove(62);
 
   // test bst search
-  // bst.search(46);
+  // bst.search(62);
 
   // testing the update methods for circles and arrows for search BST method
   // bst.circles.forEach((circle) => {

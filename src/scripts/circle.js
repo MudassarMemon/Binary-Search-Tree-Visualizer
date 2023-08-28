@@ -3,7 +3,7 @@ class Circle {
     this.context = context;
     this.level = node.level;
     this.xpos = node.xpos;
-    this.ypos = node.ypos * (1 + node.level);
+    this.ypos = node.ypos * (1 + node.level); //updates based on level
     this.value = node.value;
     this.drawNode();
   }
