@@ -38,14 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   uniqueNums.forEach((num) => bst.insert(num));
 
-  // test bst search
-  // bst.search(62);
+  // test bst insertion
+  // bst.insert(51);
 
   // test bst deletion
   bst.remove(51);
 
-  // test bst insertion
-  bst.insert(46);
+  // test bst search
+  // bst.search(46);
 
   // testing the update methods for circles and arrows for search BST method
   // bst.circles.forEach((circle) => {

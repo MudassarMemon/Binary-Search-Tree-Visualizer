@@ -81,7 +81,8 @@ class BinarySearchTree {
 
   async remove(value) {
     let current = this.root;
-    // let previous = null;
+    let previous = null;
+    let indexToRemove = null;
 
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
@@ -95,13 +96,14 @@ class BinarySearchTree {
             minRightChild = minRightChild.left;
           }
 
-          this.circles.forEach((circle) => {
+          this.circles.forEach((circle, i) => {
             if (circle["value"] === current.value) {
               circle["value"] = minRightChild.value;
               circle["circle"].value = minRightChild.value;
             } else if (circle["value"] === minRightChild.value) {
               circle["value"] = 0;
               circle["circle"].value = null;
+              indexToRemove = i;
             }
           });
 
@@ -114,14 +116,22 @@ class BinarySearchTree {
           current.value = 0;
         }
 
+        if (previous) {
+          previous.left = null;
+        }
+
+        this.circles.splice(indexToRemove, 1);
+
         await new Promise((resolve) => setTimeout(resolve, 5000));
         await this.reset();
         return;
       } else if (current.value < value) {
         //traverse right side of bst
+        previous = current;
         current = current.right;
       } else {
         //traverse left side of bst
+        previous = current;
         current = current.right;
       }
     }
