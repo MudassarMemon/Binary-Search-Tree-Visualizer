@@ -13,14 +13,17 @@ class Button {
       this.lesson();
     } else if (this.button.id === "generate-random") {
       this.generate();
-    } else if (this.button.id === "insert-node") {
+    } else if (this.button.id === "insert") {
       let num = document.querySelector("input#insert").value;
+      document.querySelector("input#insert").value = "";
       this.insert(num);
-    } else if (this.button.id === "remove-node") {
+    } else if (this.button.id === "remove") {
       let num = document.querySelector("input#remove").value;
+      document.querySelector("input#remove").value = "";
       this.remove(num);
     } else if (this.button.id === "search") {
       let num = document.querySelector("input#search").value;
+      document.querySelector("input#search").value = "";
       this.search(num);
     } else if (this.button.id === "traverse") {
       this.traverse();
@@ -38,9 +41,28 @@ class Button {
 
     const uniqueNums = [];
 
-    while (uniqueNums.length < 10) {
+    while (uniqueNums.length < 7) {
       let randomNum = Math.floor(Math.random() * 100);
-      if (!uniqueNums.includes(randomNum) && randomNum > 0) {
+      if (
+        !uniqueNums.includes(randomNum) &&
+        randomNum > 0 &&
+        randomNum >= 40 &&
+        randomNum <= 60
+      ) {
+        uniqueNums.push(randomNum);
+      }
+    }
+
+    while (uniqueNums.length < 11) {
+      let randomNum = Math.floor(Math.random() * 100);
+      if (!uniqueNums.includes(randomNum) && randomNum > 0 && randomNum < 40) {
+        uniqueNums.push(randomNum);
+      }
+    }
+
+    while (uniqueNums.length < 15) {
+      let randomNum = Math.floor(Math.random() * 100);
+      if (!uniqueNums.includes(randomNum) && randomNum > 0 && randomNum > 60) {
         uniqueNums.push(randomNum);
       }
     }
@@ -62,7 +84,7 @@ class Button {
 
   search(num) {
     console.log("search...");
-    Button.bst.remove(num);
+    Button.bst.search(num);
   }
 }
 

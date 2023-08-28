@@ -44,7 +44,7 @@ class BinarySearchTree {
 
     while (true) {
       //avoid duplicates
-      if (value === current.value) {
+      if (value == current.value) {
         console.log("This value already exists!");
         return undefined;
       }
@@ -122,8 +122,7 @@ class BinarySearchTree {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       current.circle.update("purple");
 
-      //found value to remove
-      if (current.value === value) {
+      if (current.value == value) {
         //traverse BST to find node to replace removed node
         if (current.right) {
           minChild = current.right;
@@ -154,13 +153,22 @@ class BinarySearchTree {
         } else if (current.left) {
           //node to remove has no right child, replacing with left child
           minChild = current.left;
+
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          if (minChild.arrow) {
+            minChild.arrow.update("green", 10);
+          }
+
+          //highlighting nodes being traversed
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          minChild.circle.update("green", 10);
         } else {
           //node to remove has no children - it is a leaf node - no operations required
         }
 
         //making connections to remaining nodes so none are inadvertently orphaned
         if (previous) {
-          if (current === previous.right) {
+          if (current == previous.right) {
             previous.right = current.right;
           } else if (current.right) {
             previous.left = current.right;
@@ -172,16 +180,16 @@ class BinarySearchTree {
         //updating canvas circles array accordingly
         this.circles.forEach((circle, i) => {
           if (!minChild) {
-            if (circle["circle"].value === value) {
+            if (circle["circle"].value == value) {
               indexToRemove = i;
             }
           } else {
-            if (circle["circle"].value === value) {
+            if (circle["circle"].value == value) {
               //remove unnecessary value attribute?
               current.value = minChild.value;
               circle["value"] = minChild.value;
               circle["circle"].value = minChild.value;
-            } else if (circle["circle"].value === minChild.value) {
+            } else if (circle["circle"].value == minChild.value) {
               indexToRemove = i;
             }
           }
@@ -189,16 +197,23 @@ class BinarySearchTree {
 
         //update canvas
         this.circles.splice(indexToRemove, 1);
+
         await new Promise((resolve) => setTimeout(resolve, 5000));
         await this.reset();
 
         //update connections between nodes after removal
         await new Promise((resolve) => setTimeout(resolve, 5000));
         context.clearRect(0, 0, 1500, 700);
+
         this.nodeList.splice(indexToRemove, 1);
-        console.log(this.nodeList);
+
+        //reset this.nodeList and update
+        let prevNodeList = this.nodeList;
+
+        this.nodeList = [];
         this.root = null;
-        this.nodeList.forEach((node) => {
+
+        prevNodeList.forEach((node) => {
           this.insert(node.value);
         });
 
@@ -233,13 +248,13 @@ class BinarySearchTree {
       current.circle.update();
 
       //comparison to evaluate if target found
-      if (current.value === value) {
+      if (current.value == value) {
         //highlighting found target node
         await new Promise((resolve) => setTimeout(resolve, 1000));
         current.circle.found();
 
         //clearing the highlighted traversal path after 5s
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         await this.reset();
 
         //return true if target found
@@ -264,8 +279,12 @@ class BinarySearchTree {
     const context = canvas.getContext("2d");
     context.clearRect(0, 0, 1500, 700);
 
+    //reset this.circles array and update
+    let prevCircles = this.circles;
+    this.circles = [];
+
     //add circles to canvas
-    this.circles.forEach((circle) => {
+    prevCircles.forEach((circle) => {
       circle["circle"].drawNode();
       if (circle["arrow"]) {
         circle["arrow"].drawLine();

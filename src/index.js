@@ -19,30 +19,34 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.height = 700;
   canvas.style.background = "yellow";
 
-  //generate random BST
-  const uniqueNums = [51, 62, 9];
+  const pressGenerate = document.querySelector("button#generate-random");
+  let bst = new Button(pressGenerate);
+  bst.generate();
 
-  while (uniqueNums.length < 10) {
-    let randomNum = Math.floor(Math.random() * 100);
-    if (!uniqueNums.includes(randomNum) && randomNum > 0) {
-      uniqueNums.push(randomNum);
-    }
-  }
+  //generate random BST
+  // const uniqueNums = [51, 62, 9];
+
+  // while (uniqueNums.length < 10) {
+  //   let randomNum = Math.floor(Math.random() * 100);
+  //   if (!uniqueNums.includes(randomNum) && randomNum > 0) {
+  //     uniqueNums.push(randomNum);
+  //   }
+  // }
 
   // uniqueNums.push(62);
 
   //   unbalanced bst
   //   uniqueNums.sort((a, b) => a - b);
 
-  let bst = new BinarySearchTree();
+  // let bst = new BinarySearchTree();
 
-  uniqueNums.forEach((num) => bst.insert(num));
+  // uniqueNums.forEach((num) => bst.insert(num));
 
   // test bst insertion
-  bst.insert(67);
-  bst.insert(55);
-  bst.insert(64);
-  bst.insert(66);
+  // bst.insert(67);
+  // bst.insert(55);
+  // bst.insert(64);
+  // bst.insert(66);
 
   // test bst deletion
   // bst.remove(9);
