@@ -197,7 +197,6 @@ class BinarySearchTree {
 
         //update canvas
         this.circles.splice(indexToRemove, 1);
-
         await new Promise((resolve) => setTimeout(resolve, 5000));
         await this.reset();
 
@@ -240,18 +239,18 @@ class BinarySearchTree {
       //highlighting traversal path
       await new Promise((resolve) => setTimeout(resolve, 1000));
       if (current.arrow) {
-        current.arrow.update();
+        current.arrow.update("purple");
       }
 
       //highlighting nodes being traversed
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      current.circle.update();
+      current.circle.update("purple");
 
       //comparison to evaluate if target found
       if (current.value == value) {
         //highlighting found target node
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        current.circle.found();
+        current.circle.update("green", 10);
 
         //clearing the highlighted traversal path after 5s
         await new Promise((resolve) => setTimeout(resolve, 1000));

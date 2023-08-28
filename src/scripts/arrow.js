@@ -29,7 +29,7 @@ class Arrow {
     }
   }
 
-  update(color = "red", thickness = "3") {
+  update(color = "red", thickness = "5") {
     //offset the line and circle intersection point to be at the 45 deg, 135 deg, 225 deg or 315 deg depending on whether linking left or right child nodes
     let offSet = Math.sqrt(20 ** 2 / 2);
 

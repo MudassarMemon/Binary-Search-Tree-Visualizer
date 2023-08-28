@@ -33,8 +33,8 @@ class Circle {
   found() {
     this.context.beginPath();
     this.context.strokeStyle = "green";
-    this.context.lineWidth = 5;
-    this.context.arc(this.xpos, this.ypos, 26, 0, 2 * Math.PI);
+    this.context.lineWidth = 15;
+    this.context.arc(this.xpos, this.ypos, 30, 0, 2 * Math.PI);
     this.context.stroke();
     this.context.closePath();
   }
