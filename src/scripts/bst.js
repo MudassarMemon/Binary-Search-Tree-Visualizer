@@ -5,7 +5,7 @@ class Node {
   constructor(value) {
     this.value = value;
     this.level = 0;
-    this.xpos = 750;
+    this.xpos = window.innerWidth / 2 - 50;
     this.ypos = 75; //more accurately refers to y spacing between canvas circles - refer to circle constructor
     this.left = null;
     this.right = null;
@@ -56,7 +56,7 @@ class BinarySearchTree {
       if (value < current.value) {
         //updates nodes x pos to be left of default root xpos
         //this is proportional to the node level to prevent overlaps on canvas
-        newNode.xpos -= 300 / newNode.level;
+        newNode.xpos -= 300 / (newNode.level * 1.5);
 
         //if current node does not have left child, new node set as current nodes left child
         if (!current.left) {
@@ -78,7 +78,7 @@ class BinarySearchTree {
       } else {
         //updates nodes x pos to be right of default root xpos
         //this is proportional to the node level to prevent overlaps on canvas
-        newNode.xpos += 300 / newNode.level;
+        newNode.xpos += 300 / (newNode.level * 1.5);
 
         //if current node does not have right child, new node set as current nodes left child
         if (!current.right) {

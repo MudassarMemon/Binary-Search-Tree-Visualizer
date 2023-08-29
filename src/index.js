@@ -12,56 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
   new Slide(slides);
 
   const canvas = document.getElementById("canvas");
-  canvas.width = 1500;
-  canvas.height = 700;
+  let windowHeight = window.innerHeight;
+  let windowWidth = window.innerWidth;
+  canvas.width = windowWidth - 100;
+  canvas.height = windowHeight;
   canvas.style.background = "linear-gradient(skyblue, lightgreen)";
 
   const pressGenerate = document.querySelector("button#generate-random");
   let bst = new Button(pressGenerate);
   bst.generate();
 
-  //generate random BST
-  // const uniqueNums = [51, 62, 9];
-
-  // while (uniqueNums.length < 10) {
-  //   let randomNum = Math.floor(Math.random() * 100);
-  //   if (!uniqueNums.includes(randomNum) && randomNum > 0) {
-  //     uniqueNums.push(randomNum);
-  //   }
-  // }
-
-  // uniqueNums.push(62);
-
   //   unbalanced bst
   //   uniqueNums.sort((a, b) => a - b);
-
-  // let bst = new BinarySearchTree();
-
-  // uniqueNums.forEach((num) => bst.insert(num));
-
-  // test bst insertion
-  // bst.insert(67);
-  // bst.insert(55);
-  // bst.insert(64);
-  // bst.insert(66);
-
-  // test bst deletion
-  // bst.remove(9);
-  // bst.remove(62);
-
-  // test bst search
-  // bst.search(64);
-
-  // testing the update methods for circles and arrows for search BST method
-  // bst.circles.forEach((circle) => {
-  //   circle["circle"].update();
-  //   if (circle["arrow"]) {
-  //     circle["arrow"].update();
-  //   }
-  // });
-
-  // reset canvas
-  // bst.circles.forEach((circle) => {
-  //   circle["circle"].reset();
-  // });
 });
