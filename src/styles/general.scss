@@ -1,3 +1,7 @@
+* {
+    font-family: "Comfortaa";
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,12 +19,13 @@ body {
 header {
     display:flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0px 50px;
+    margin: 0;
     font-family: "Comfortaa";
+    font-size: x-large;
     text-decoration: white;
-
     border:rgb(0, 0, 0);
     border-style: solid;
 }
@@ -46,10 +51,9 @@ footer {
 nav{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     margin:0;
-    padding: 10px;
-    height: 50px;
+    padding: 0px 50px;
 }
 
 img, button {
@@ -67,48 +71,57 @@ img, button {
     // z-index: 0;
 }
 
+/* CSS */
+.button-50 {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Comfortaa";
+    font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 5px 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 
-   .canvas-input {
-    border: 3px solid #000;
-    border-radius: 5px;
-    height: 50px;
-    background-image: linear-gradient(to right, skyblue, lightgreen);
-    line-height: normal;
-    color: #282828;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    user-select: auto;
-    font-size: 16px;
-    padding: 0 6px;
-    padding-left: 12px;
-   }
-   
-   .canvas-input:focus {
-    // border: 3px solid #000000;
-    background-image: linear-gradient(to left, skyblue, lightgreen);   
-    }
+.button-50:focus {
+  text-decoration: none;
+}
 
-   .canvas-button {
-    display: inline-block;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    border-radius: 8px;
-    padding: 14px 24px 16px;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    transition: transform 200ms,background 200ms;
-    background: transparent;
-    color: #000000;
-    box-shadow: 0 0 0 3px #000000 inset;
-   }
-    
-    .canvas-button:hover{
-        transform: translateY(-2px);
-    }
-    
+.button-50:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
+}
 
     

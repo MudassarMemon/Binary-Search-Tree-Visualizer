@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-128-thumb/binary-tree-diagram-484863.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-128-thumb/binary-tree-diagram-484863.png">
     <script src="./dist/main.js"></script>
     <title>Binary Tree Visualizer</title>
   </head>
@@ -26,17 +25,14 @@
 </header>
 
 <nav>
+<div>
+  <button class="button-50" role="button" id="lessons" name="false">Lessons</button>
+  <button class="button-50" role="button" id="code" name="false">Code</button>
+</div>
 
-  <button class="button" id="lessons" name="false">
-    <span class="button_top">Lessons</span>
-  </button>
-
-
-  <button class="button" id="lessons" name="false">
-    <span class="button_top">Code</span>
-  </button>
-
+<div>
   <img class="question" src="https://static.thenounproject.com/png/4407372-200.png"></a>
+</div>
 </nav>
 
 <body>
@@ -111,29 +107,36 @@
     <canvas id="canvas"></canvas>
     
     <div id="canvas-buttons">
+      <div>
       <button class="canvas-button" id="generate-random">
         <span class="button_top"> Generate Random
         </span>
       </button>
+    </div>
 
+      <div>
       <input type="text" id="insert" class="canvas-input" value="">
       <button class="canvas-button" id="insert">
         <span class="button_top"> Insert Node
         </span>
       </button>    
+      </div>
 
+      <div>
       <input type="text" id="remove" class="canvas-input" value="">
       <button class="canvas-button" id="remove">
         <span class="button_top"> Remove Node
         </span>
       </button>    
+    </div>
 
+    <div>
       <input type="text" id="search" class="canvas-input" value="">
       <button class="canvas-button" id="search">
         <span class="button_top"> Search
         </span>
       </button>    
-
+    </div>
 
     </div>
   </div>
