@@ -1,7 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("");
+    background-image: url("");
+    background-image: url("");
+    background-image: url("");
+    // background-image: url("https://img.freepik.com/free-vector/black-neural-network-illustration_53876-80562.jpg?w=740&t=st=1693330735~exp=1693331335~hmac=d887cde001e71fec104fd0a181d19c409bbe0959e653fb69d39776185b0bf1c8");
+    // background-image: url("https://img.freepik.com/free-vector/colored-points-connected-net_1048-12426.jpg?w=1480&t=st=1693330264~exp=1693330864~hmac=ef2df19047d9aa90700e2ec0a759ebad9da125c4d48ee446bd6312ece9ded497");
+    // background-image: url("https://img.freepik.com/free-vector/abstract-technology-particle-gray-background_1035-17927.jpg?w=1380&t=st=1693330245~exp=1693330845~hmac=f5113469ea2517840cf441a5b17b44586d225acca5ba140ca0c0413a7eb3a39b");
+    // background-image: url("https://img.freepik.com/premium-vector/abstract-connecting-dots-lines-connection-science-background-vector-illustration_41981-2372.jpg?w=1060");
+    background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
+    // background-image: url("https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=1380&t=st=1693330098~exp=1693330698~hmac=c68b424fa44add31ad7427d40f22c537240d0222b520e945fcae32dd373ac731");
+    // background-image: url("https://img.freepik.com/free-vector/gradient-colored-network-connection-background_52683-59558.jpg?w=1380&t=st=1693330018~exp=1693330618~hmac=5f1abf70b923bf6fc91da2b13f4aa23a497a15833d6e5833a3567a2fbb63259c");
+    // background-image: url("https://images.pond5.com/network-nodes-connected-background-footage-089996011_prevstill.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    
+}
+
+
 header {
     display:flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-around;
+    font-family: "Comfortaa";
+    text-decoration: white;
+    border:red;
+    border-style: double;
+}
+
+header > h1 {
+    color: grey;
+    background-color: rgb(255, 255, 255);
+}
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 20px 40px;
+    border:red;
+    border-style: solid;
 }
 
 //decorate this lessons icon
@@ -10,4 +53,23 @@ header {
     height: 30px;
     font-size: 20px;
     margin: 5px;
+}
+
+#code{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+img, button {
+    cursor: pointer;
+}
+
+input {
+    cursor: text
+}
+
+.question{
+    height: 150%;
 }

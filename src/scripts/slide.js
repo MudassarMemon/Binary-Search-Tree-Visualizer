@@ -1,45 +1,48 @@
 class Slide {
-  constructor(slide, index, slides) {
-    this.slide = slide;
-    this.index = index;
+  constructor(slides) {
     this.slides = slides;
+    this.index = 0;
 
-    //adding event listener to close, next, prev buttons
-    this.slide.children[0].addEventListener(
-      "click",
-      this.clickHandle.bind(this)
-    );
-    this.slide.children[1].addEventListener(
-      "click",
-      this.clickHandle.bind(this)
-    );
-    this.slide.children[2].addEventListener(
-      "click",
-      this.clickHandle.bind(this)
-    );
+    this.next = document.getElementById("next");
+    this.prev = document.getElementById("prev");
+    this.close = document.getElementById("close");
+
+    // adding event listener to close, next, prev buttons
+    this.next.addEventListener("click", this.clickHandle.bind(this));
+    this.prev.addEventListener("click", this.clickHandle.bind(this));
+    this.close.addEventListener("click", this.clickHandle.bind(this));
   }
 
   showSlide(index) {
-    for (let i = 0; i < this.slides.length - 1; i++) {
+    // debugger;
+    for (let i = 0; i < this.slides.length; i++) {
       if (i === index) {
-        slides[i].style.display = "block";
+        this.slides[i].style.display = "flex";
       } else {
-        slides[i].style.display = "none";
+        this.slides[i].style.display = "none";
       }
     }
   }
 
-  hideSlide() {
+  hideSlide(index) {
     document.getElementById("slide-container").style.display = "none";
+    document.getElementById(`${this.index}`).style.display = "none";
   }
 
   clickHandle(event) {
     if (event.target.id === "next") {
-      this.showSlide(this.index + 1);
+      if (this.index < 7) {
+        this.index += 1;
+        this.showSlide(this.index);
+      }
     } else if (event.target.id === "prev") {
-      this.showSlide(this.index - 1);
+      if (this.index > 0) {
+        this.index -= 1;
+        this.showSlide(this.index);
+      }
     } else if (event.target.id === "close") {
-      this.hideSlide();
+      this.hideSlide(this.index);
+      document.getElementById("lessons").name = "false";
     }
 
     // if (currentSlideIndex < 0) {

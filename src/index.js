@@ -9,15 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const slides = document.getElementsByClassName("slide");
-
-  for (let i = 0; i < slides.length; i++) {
-    new Slide(slides[i], i, slides);
-  }
+  new Slide(slides);
 
   const canvas = document.getElementById("canvas");
   canvas.width = 1500;
   canvas.height = 700;
-  canvas.style.background = "yellow";
+  canvas.style.background = "linear-gradient(skyblue, lightgreen)";
 
   const pressGenerate = document.querySelector("button#generate-random");
   let bst = new Button(pressGenerate);

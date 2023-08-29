@@ -1,39 +1,80 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
 #slide-container {
   width: 100vw;
   height: 100vh;
   background-color: #f0f0f0;
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   display: none;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding: 20px;
 }
 
-.slide {
-  width: 80%;
-  max-width: 800px;
+.slides {
+  width: 100%;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.slide h1, .slide h2, .slide p {
+div.slides > div {
+  display: none;
+}
+
+img#prev {
+  transform: rotate(180deg);
+}
+
+#prev, #next, #close {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+}
+
+body {
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("");
+  background-image: url("");
+  background-image: url("");
+  background-image: url("");
+  background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 header {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
+  font-family: "Comfortaa";
+  text-decoration: white;
+  border: red;
+  border-style: double;
+}
+
+header > h1 {
+  color: grey;
+  background-color: rgb(255, 255, 255);
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 20px 40px;
+  border: red;
+  border-style: solid;
 }
 
 #lessons {
@@ -43,6 +84,25 @@ header {
   margin: 5px;
 }
 
+#code {
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+img, button {
+  cursor: pointer;
+}
+
+input {
+  cursor: text;
+}
+
+.question {
+  height: 150%;
+}
+
 #canvas-container {
   display: flex;
   flex-flow: column nowrap;
@@ -50,7 +110,21 @@ header {
   align-items: center;
 }
 
+#canvas {
+  border-radius: 25px;
+  border: 2px solid blue;
+  padding: 5px;
+}
+
 #canvas-buttons {
   display: flex;
-  align-content: flex-start;
+  height: 50px;
+  font-size: 100px;
+  border-color: red;
+  border-style: solid;
+  margin: 10px;
+}
+
+#canvas-buttons > button {
+  margin: 0px 30px 0px 0px;
 }

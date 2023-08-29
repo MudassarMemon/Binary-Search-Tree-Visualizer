@@ -31,7 +31,11 @@ class Button {
   }
 
   lesson() {
-    document.getElementById("slide-container").style.display = "flex";
+    if (document.getElementById("lessons").name === "false") {
+      document.getElementById("slide-container").style.display = "flex";
+      document.getElementById("0").style.display = "flex";
+      document.getElementById("lessons").name = "true";
+    }
   }
 
   generate() {

@@ -6,23 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-128-thumb/binary-tree-diagram-484863.png">
+    <script src="https://kit.fontawesome.com/3360bbf3c1.js" crossorigin="anonymous"></script>
     <script src="./dist/main.js"></script>
     <title>Binary Tree Visualizer</title>
   </head>
 
 <header>
+  <a id="lessons" name="false"><img class="question" src="https://img.icons8.com/flat-round/64/000000/question-mark.png"></a>
+
   <h1>Binary Search Tree Visualizer</h1>
+
+  <div class="profile">
+    <a target="_blank" href="https://github.com/wc2184/SortAlg"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
+    <a target="_blank" href="https://linkedin.com/"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"></a>
+  </div>
 </header>
 
+
+
 <body>
-  <button id="lessons">Lessons</button>
+  <button id="lessons" name="false">Lessons</button>
+  <button id="code" name="false">Code</button>
+
   <div id="slide-container">
-    <div class="slide">
-      <button id="prev">Prev</button>
-      <button id="next">Next</button>
-      <button id="close">x</button>
-      <h1>Introduction to Binary Search Trees</h1>
-      <p>Binary Search Trees (BSTs) are...</p>
+    <div class="slides">
+
+      
+      <button id="prev"><img id="prev" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button>
+      <button id="next"><img id="next" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button>
+      <button id="close"><img id="close" src="./src/img/close.png"></i></button>
+
+        <div class="slide" id="0">
+          <h2>1. Introduction to Binary Search Trees:</h2>
+          <p>A Binary Search Tree is a hierarchical data structure that stores elements in a way that enables efficient searching, insertion, and deletion operations.</p>
+          <p>Each node in a BST has a value and at most two children: a left child and a right child.</p>
+          <p>The Binary Search Tree property dictates that the values in the left subtree of a node are less than or equal to the value of the node, while the values in the right subtree are greater.</p>
+        </div>
+        
+        <div class="slide" id="1">
+          <h2>2. Characteristics and Terminology:</h2>
+          <p><strong>Node:</strong> Each element in the BST is represented by a node containing a value and pointers to left and right children.</p>
+          <p><strong>Root:</strong> The topmost node in the tree.</p>
+          <p><strong>Parent and Children:</strong> Nodes have a parent node above them and children nodes below them.</p>
+          <p><strong>Left Child and Right Child:</strong> Children are categorized based on their relation to their parent's value.</p>
+          <p><strong>Subtree:</strong> A node and its descendants form a subtree.</p>
+        </div>
+      
+        <div class="slide" id="2">
+          <h2>3. Operations on Binary Search Trees:</h2>
+          <p><strong>Insertion:</strong> To insert a new element, compare its value with nodes as you traverse the tree. Move left for smaller values and right for larger values until you find an empty spot to insert the new node.</p>
+          <p><strong>Search:</strong> Compare the target value with nodes while traversing the tree. This guclass="slide" ides you to the correct subtree, narrowing the search space until you find the element or determine its absence.</p>
+          <p><strong>Deletion:</strong> Deleting a node requires reorganizing the tree while maintaining the BST property. Different cases arise based on the node's children.</p>
+        </div>
+      
+        <div class="slide" id="3">
+          <h2>4. Traversing a Binary Search Tree:</h2>
+          <p><strong>In-order Traversal:</strong> Traverse the left subtree, visit the current node, then traverse the right subtree. Produces values in ascending order.</p>
+          <p><strong>Pre-order Traversal:</strong> Visit the current node, traverse the left subtree, then traverse the right subtree. Used for making a copy of the tree.</p>
+          <p><strong>Post-order Traversal:</strong> Traverse the left subtree, traverse the right subtree, then visit the current node. Used for deleting nodes from the tree.</p>
+        </div>
+      
+        <div class="slide" id="4">
+          <h2>5. Advantages and Complexity Analysis:</h2>
+          <p>BSTs offer efficient average-case performance for search, insertion, and deletion when balanced.</p>
+          <p>Average time complexity for these operations is O(log n), where n is the number of nodes in the tree.</p>
+          <p>However, in the worst case, if the tree becomes skewed, operations can take O(n) time.</p>
+        </div>
+      
+        <div class="slide" id="5">
+          <h2>6. Maintaining Balance:</h2>
+          <p>To ensure efficient operations in all cases, various balanced BSTs like AVL trees and Red-Black trees are used.</p>
+          <p>These trees maintain balance through rotations and color-based techniques, keeping the height logarithmic and preserving the O(log n) time complexity.</p>
+        </div>
+      
+        <div class="slide" id="6">
+          <h2>7. Applications:</h2>
+          <p>Binary Search Trees are used in databases, as their search efficiency aclass="slide" ids in quick retrieval of data.</p>
+          <p>They're also useful for implementing sorting algorithms like Binary Tree Sort.</p>
+          <p>In compilers, symbol tables are often implemented using BSTs.</p>
+        </div>
+      
+        <div class="slide" id="7">
+          <h2>8. Conclusion:</h2>
+          <p>Binary Search Trees are a powerful tool for efficient data storage, search, and manipulation.</p>
+          <p>Understanding their structure and properties is crucial for designing effective algorithms and data structures in computer science.</p>
+        </div>
+    
     </div>
   </div>
 
@@ -41,5 +112,15 @@
     </div>
   </div>
 </body>
+
+<footer>  
+  <div class="profile">
+    <a target="_blank" href="https://github.com/wc2184/SortAlg"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
+    <a target="_blank" href="https://linkedin.com/"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"></a>
+  </div>
+
+  <a id="lessons" name="false"><img class="question" src="https://img.icons8.com/flat-round/64/000000/question-mark.png"></a>
+
+</footer>
 
 </html>

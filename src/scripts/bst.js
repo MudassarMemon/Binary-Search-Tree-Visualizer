@@ -113,14 +113,14 @@ class BinarySearchTree {
     //traverse BST to search value to remove
     while (true) {
       //highlighting traversal path
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       if (current.arrow) {
-        current.arrow.update("purple");
+        current.arrow.update("red");
       }
 
       //highlighting nodes being traversed
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      current.circle.update("purple");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      current.circle.update("red");
 
       if (current.value == value) {
         //traverse BST to find node to replace removed node
@@ -128,39 +128,39 @@ class BinarySearchTree {
           minChild = current.right;
 
           // highlighting arrows being traversed
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, 500));
           if (minChild.arrow) {
             minChild.arrow.update("green", 10);
           }
 
           //highlighting nodes being traversed
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, 500));
           minChild.circle.update("green", 10);
 
           while (minChild.left) {
             minChild = minChild.left;
 
             // highlighting arrows being traversed
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 500));
             if (minChild.arrow) {
               minChild.arrow.update("green", 10);
             }
 
             //highlighting nodes being traversed
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 500));
             minChild.circle.update("green", 10);
           }
         } else if (current.left) {
           //node to remove has no right child, replacing with left child
           minChild = current.left;
 
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, 500));
           if (minChild.arrow) {
             minChild.arrow.update("green", 10);
           }
 
           //highlighting nodes being traversed
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) => setTimeout(resolve, 500));
           minChild.circle.update("green", 10);
         } else {
           //node to remove has no children - it is a leaf node - no operations required
@@ -191,17 +191,22 @@ class BinarySearchTree {
               circle["circle"].value = minChild.value;
             } else if (circle["circle"].value == minChild.value) {
               indexToRemove = i;
+              circle["circle"].value = null;
             }
           }
         });
 
         //update canvas
+        await new Promise((resolve) => setTimeout(resolve, 2500));
+        await this.update();
+
+        // update canvas
         this.circles.splice(indexToRemove, 1);
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        await new Promise((resolve) => setTimeout(resolve, 2500));
         await this.reset();
 
         //update connections between nodes after removal
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        await new Promise((resolve) => setTimeout(resolve, 2500));
         context.clearRect(0, 0, 1500, 700);
 
         this.nodeList.splice(indexToRemove, 1);
@@ -237,24 +242,24 @@ class BinarySearchTree {
     //traverse bst starting from root node
     while (current) {
       //highlighting traversal path
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       if (current.arrow) {
         current.arrow.update("purple");
       }
 
       //highlighting nodes being traversed
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       current.circle.update("purple");
 
       //comparison to evaluate if target found
       if (current.value == value) {
         //highlighting found target node
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 500));
         current.circle.update("green", 10);
 
         //clearing the highlighted traversal path after 5s
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        await this.reset();
+        await new Promise((resolve) => setTimeout(resolve, 2500));
+        await this.update();
 
         //return true if target found
         return true;
@@ -284,6 +289,21 @@ class BinarySearchTree {
 
     //add circles to canvas
     prevCircles.forEach((circle) => {
+      circle["circle"].drawNode();
+      if (circle["arrow"]) {
+        circle["arrow"].drawLine();
+      }
+    });
+  }
+
+  update() {
+    //clear canvas
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
+    context.clearRect(0, 0, 1500, 700);
+
+    //add circles to canvas
+    this.circles.forEach((circle) => {
       circle["circle"].drawNode();
       if (circle["arrow"]) {
         circle["arrow"].drawLine();
