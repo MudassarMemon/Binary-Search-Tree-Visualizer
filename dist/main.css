@@ -41,10 +41,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-image: url("");
-  background-image: url("");
-  background-image: url("");
-  background-image: url("");
   background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
   background-repeat: no-repeat;
   background-position: center;
@@ -55,52 +51,178 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  align-items: center;
+  padding: 10px;
   font-family: "Comfortaa";
   text-decoration: white;
-  border: red;
-  border-style: double;
+  border: rgb(0, 0, 0);
+  border-style: solid;
 }
 
 header > h1 {
-  color: grey;
-  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 footer {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 10px;
-  padding: 20px 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
   border: red;
   border-style: solid;
 }
 
-#lessons {
-  width: 100px;
-  height: 30px;
-  font-size: 20px;
-  margin: 5px;
-}
-
-#code {
-  width: 100px;
-  height: 30px;
-  font-size: 20px;
-  margin: 5px;
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 10px;
+  height: 50px;
 }
 
 img, button {
   cursor: pointer;
 }
 
-input {
-  cursor: text;
+.question {
+  cursor: help;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 5px;
 }
 
-.question {
-  height: 150%;
+button.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button.learn-more:hover .circle {
+  width: 100%;
+}
+
+button.learn-more:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button.learn-more:hover .button-text {
+  color: #fff;
+}
+
+.search {
+  border: 3px solid #000;
+  border-radius: 5px;
+  height: 50px;
+  background-image: linear-gradient(to right, skyblue, lightgreen);
+  line-height: normal;
+  color: #282828;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+}
+
+.search:focus {
+  background-image: linear-gradient(to left, skyblue, lightgreen);
+}
+
+.button {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  transition: transform 200ms, background 200ms;
+  background: transparent;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+
+.button:hover {
+  transform: translateY(-2px);
 }
 
 #canvas-container {
@@ -112,7 +234,7 @@ input {
 
 #canvas {
   border-radius: 25px;
-  border: 2px solid blue;
+  border: 5px solid rgb(0, 0, 0);
   padding: 5px;
 }
 

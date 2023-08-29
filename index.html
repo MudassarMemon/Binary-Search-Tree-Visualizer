@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-128-thumb/binary-tree-diagram-484863.png">
-    <script src="https://kit.fontawesome.com/3360bbf3c1.js" crossorigin="anonymous"></script>
     <script src="./dist/main.js"></script>
     <title>Binary Tree Visualizer</title>
   </head>
 
 <header>
-  <a id="lessons" name="false"><img class="question" src="https://img.icons8.com/flat-round/64/000000/question-mark.png"></a>
 
   <h1>Binary Search Tree Visualizer</h1>
+
+  <a id="placeholder"></a>
+
 
   <div class="profile">
     <a target="_blank" href="https://github.com/wc2184/SortAlg"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
@@ -24,15 +25,34 @@
   </div>
 </header>
 
+<nav>
 
+  <button class="learn-more" id="lessons" name="false">
+    
+    <span class="circle" aria-hidden="true"> 
+      <span class="icon arrow"></span> 
+    </span>
+
+    <span class="button-text">Lessons</span>
+  </button>
+
+
+  <button class="learn-more" id="lessons" name="false">
+      
+    <span class="circle" aria-hidden="true"> 
+      <span class="icon arrow"></span> 
+    </span>
+
+    <span class="button-text">Code</span>
+</button>
+
+  <img class="question" src="https://static.thenounproject.com/png/4407372-200.png"></a>
+</nav>
 
 <body>
-  <button id="lessons" name="false">Lessons</button>
-  <button id="code" name="false">Code</button>
 
   <div id="slide-container">
     <div class="slides">
-
       
       <button id="prev"><img id="prev" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button>
       <button id="next"><img id="next" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button>
@@ -101,26 +121,39 @@
     <canvas id="canvas"></canvas>
     
     <div id="canvas-buttons">
-      <button id="generate-random">Generate Random</button>
-      <input type="text" id="insert" value="">
-      <button id="insert">Insert Node</button>
-      <input type="text" id="remove" value="">
-      <button id="remove">Remove Node</button>
-      <input type="text" id="search" value="">
-      <button id="search">Search</button>
-      <button id="traverse">Traverse</button>
+      <button class="button" id="generate-random">
+        <span class="button_top"> Generate Random
+        </span>
+      </button>
+      <!-- <button id="generate-random">Generate Random</button> -->
+
+      <input type="text" id="insert" class="search" value="">
+      <button class="button" id="insert">
+        <span class="button_top"> Insert Node
+        </span>
+      </button>    
+      <!-- <button id="insert">Insert Node</button> -->
+
+      <input type="text" id="remove" class="search" value="">
+      <button class="button" id="remove">
+        <span class="button_top"> Remove Node
+        </span>
+      </button>    
+      <!-- <button id="remove">Remove Node</button> -->
+
+      <input type="text" id="search" class="search"value="">
+      <button class="button" id="search">
+        <span class="button_top"> Search
+        </span>
+      </button>    
+      <!-- <button id="search">Search</button> -->
+
     </div>
   </div>
 </body>
 
 <footer>  
-  <div class="profile">
-    <a target="_blank" href="https://github.com/wc2184/SortAlg"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
-    <a target="_blank" href="https://linkedin.com/"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"></a>
-  </div>
-
-  <a id="lessons" name="false"><img class="question" src="https://img.icons8.com/flat-round/64/000000/question-mark.png"></a>
-
+  <h2>footer</h2>
 </footer>
 
 </html>
