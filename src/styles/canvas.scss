@@ -80,3 +80,34 @@
     img:hover{
         transform: translateY(-2px);
     }
+
+    .question{
+        cursor: help;
+        width: 30px;
+        height: 37px;
+        position: absolute;
+        bottom: 60px;
+        left: 50px;
+    }
+
+    div#tutorial{
+        display: none;
+        width: 40%;
+        // bottom: 115px;
+        // left: 125px;
+        border-style: solid;
+        border-radius: 20px;
+        border-width: 3px;
+        padding: 20px;
+        border-color: rgb(0, 0, 0);
+        background-color: rgba(240, 255, 255, 0.857);
+        position: absolute
+    }
+
+    .question:hover + div#tutorial {
+        display: flex;
+        flex-flow: column wrap;
+
+
+    }
+

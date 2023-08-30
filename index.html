@@ -22,7 +22,7 @@
     <button class="button-50" role="button" id="code" name="false">Code</button>
 
   <div class="profile">
-    <a target="_blank" href="https://mudassarmemon.github.io/JavascriptDemo/"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
+    <a target="_blank" href="https://github.com/MudassarMemon/JavascriptDemo"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
     <a target="_blank" href="https://www.linkedin.com/in/mudassar-memon-0a48b1125"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"></a>
   </div>
 </header>
@@ -112,276 +112,278 @@
 
     <pre class="codeslide" id="java">
 
-      Javascript:
+        Javascript Implementation:
 
-      class Node {
-          constructor(value) {
-              this.value = value;
-              this.left = null;
-              this.right = null;
-          }
-      }
-      
-      class BinaryTree {
-          constructor() {
-              this.root = null;
-          }
-      
-          insert(value) {
-              const newNode = new Node(value);
-              if (!this.root) {
-                  this.root = newNode;
-                  return;
-              }
-      
-              this._insertRecursive(this.root, newNode);
-          }
-      
-          _insertRecursive(currentNode, newNode) {
-              if (newNode.value < currentNode.value) {
-                  if (!currentNode.left) {
-                      currentNode.left = newNode;
-                  } else {
-                      this._insertRecursive(currentNode.left, newNode);
-                  }
-              } else {
-                  if (!currentNode.right) {
-                      currentNode.right = newNode;
-                  } else {
-                      this._insertRecursive(currentNode.right, newNode);
-                  }
-              }
-          }
-      
-          search(value) {
-              return this._searchRecursive(this.root, value);
-          }
-      
-          _searchRecursive(currentNode, value) {
-              if (!currentNode) {
-                  return false;
-              }
-      
-              if (currentNode.value === value) {
-                  return true;
-              } else if (value < currentNode.value) {
-                  return this._searchRecursive(currentNode.left, value);
-              } else {
-                  return this._searchRecursive(currentNode.right, value);
-              }
-          }
-      
-          remove(value) {
-              this.root = this._removeRecursive(this.root, value);
-          }
-      
-          _removeRecursive(currentNode, value) {
-              if (!currentNode) {
-                  return null;
-              }
-      
-              if (value === currentNode.value) {
-                  if (!currentNode.left) {
-                      return currentNode.right;
-                  } else if (!currentNode.right) {
-                      return currentNode.left;
-                  } else {
-                      const minValue = this._findMinValue(currentNode.right);
-                      currentNode.value = minValue;
-                      currentNode.right = this._removeRecursive(currentNode.right, minValue);
-                  }
-              } else if (value < currentNode.value) {
-                  currentNode.left = this._removeRecursive(currentNode.left, value);
-              } else {
-                  currentNode.right = this._removeRecursive(currentNode.right, value);
-              }
-      
-              return currentNode;
-          }
-      
-          _findMinValue(node) {
-              while (node.left) {
-                  node = node.left;
-              }
-              return node.value;
-          }
-      }
+        1 | class Node {
+        2 |     constructor(value) {
+        3 |         this.value = value;
+        4 |         this.left = null;
+        5 |         this.right = null;
+        6 |     }
+        7 | }
+        8 |
+        9 | class BinaryTree {
+       10 |     constructor() {
+       11 |         this.root = null;
+       12 |     }
+       13 |
+       14 |     insert(value) {
+       15 |         const newNode = new Node(value);
+       16 |         if (!this.root) {
+       17 |             this.root = newNode;
+       18 |             return;
+       19 |         }
+       20 |
+       21 |         this._insertRecursive(this.root, newNode);
+       22 |     }
+       23 |
+       24 |     _insertRecursive(currentNode, newNode) {
+       25 |         if (newNode.value < currentNode.value) {
+       26 |             if (!currentNode.left) {
+       27 |                 currentNode.left = newNode;
+       28 |             } else {
+       29 |                 this._insertRecursive(currentNode.left, newNode);
+       30 |             }
+       31 |         } else {
+       32 |             if (!currentNode.right) {
+       33 |                 currentNode.right = newNode;
+       34 |             } else {
+       35 |                 this._insertRecursive(currentNode.right, newNode);
+       36 |             }
+       37 |         }
+       38 |     }
+       39 |
+       40 |     search(value) {
+       41 |         return this._searchRecursive(this.root, value);
+       42 |     }
+       43 |
+       44 |     _searchRecursive(currentNode, value) {
+       45 |         if (!currentNode) {
+       46 |             return false;
+       47 |         }
+       48 |
+       49 |         if (currentNode.value === value) {
+       50 |             return true;
+       51 |         } else if (value < currentNode.value) {
+       52 |             return this._searchRecursive(currentNode.left, value);
+       53 |         } else {
+       54 |             return this._searchRecursive(currentNode.right, value);
+       55 |         }
+       56 |     }
+       57 |
+       58 |     remove(value) {
+       59 |         this.root = this._removeRecursive(this.root, value);
+       60 |     }
+       61 |
+       62 |     _removeRecursive(currentNode, value) {
+       63 |         if (!currentNode) {
+       64 |             return null;
+       65 |         }
+       66 |
+       67 |         if (value === currentNode.value) {
+       68 |             if (!currentNode.left) {
+       69 |                 return currentNode.right;
+       70 |             } else if (!currentNode.right) {
+       71 |                 return currentNode.left;
+       72 |             } else {
+       73 |                 const minValue = this._findMinValue(currentNode.right);
+       74 |                 currentNode.value = minValue;
+       75 |                 currentNode.right = this._removeRecursive(currentNode.right, minValue);
+       76 |             }
+       77 |         } else if (value < currentNode.value) {
+       78 |             currentNode.left = this._removeRecursive(currentNode.left, value);
+       79 |         } else {
+       80 |             currentNode.right = this._removeRecursive(currentNode.right, value);
+       81 |         }
+       82 |
+       83 |         return currentNode;
+       84 |     }
+       85 |
+       86 |     _findMinValue(node) {
+       87 |         while (node.left) {
+       88 |             node = node.left;
+       89 |         }
+       90 |         return node.value;
+       91 |     }
+       92 | }       
       </pre>
 
       <pre class="codeslide" id="python">
 
-        Python:
+        Python Implementation:
 
-        class Node:
-            def __init__(self, value):
-                self.value = value
-                self.left = None
-                self.right = None
-    
-        class BinaryTree:
-            def __init__(self):
-                self.root = None
-        
-            def insert(self, value):
-                new_node = Node(value)
-                if not self.root:
-                    self.root = new_node
-                    return
-                
-                self._insert_recursive(self.root, new_node)
-            
-            def _insert_recursive(self, current_node, new_node):
-                if new_node.value < current_node.value:
-                    if not current_node.left:
-                        current_node.left = new_node
-                    else:
-                        self._insert_recursive(current_node.left, new_node)
-                else:
-                    if not current_node.right:
-                        current_node.right = new_node
-                    else:
-                        self._insert_recursive(current_node.right, new_node)
-        
-            def search(self, value):
-                return self._search_recursive(self.root, value)
-        
-            def _search_recursive(self, current_node, value):
-                if not current_node:
-                    return False
-                
-                if current_node.value == value:
-                    return True
-                elif value < current_node.value:
-                    return self._search_recursive(current_node.left, value)
-                else:
-                    return self._search_recursive(current_node.right, value)
-            
-            def remove(self, value):
-                self.root = self._remove_recursive(self.root, value)
-        
-            def _remove_recursive(self, current_node, value):
-                if not current_node:
-                    return None
-                
-                if value == current_node.value:
-                    if not current_node.left:
-                        return current_node.right
-                    elif not current_node.right:
-                        return current_node.left
-                    else:
-                        min_value = self._find_min_value(current_node.right)
-                        current_node.value = min_value
-                        current_node.right = self._remove_recursive(current_node.right, min_value)
-                elif value < current_node.value:
-                    current_node.left = self._remove_recursive(current_node.left, value)
-                else:
-                    current_node.right = self._remove_recursive(current_node.right, value)
-                
-                return current_node
-            
-            def _find_min_value(self, node):
-                while node.left:
-                    node = node.left
-                return node.value
+        1 | class Node:
+        2 |     def __init__(self, value):
+        3 |         self.value = value
+        4 |         self.left = None
+        5 |         self.right = None
+        6 | 
+        7 | class BinaryTree:
+        8 |     def __init__(self):
+        9 |         self.root = None
+       10 | 
+       11 |     def insert(self, value):
+       12 |         new_node = Node(value)
+       13 |         if not self.root:
+       14 |             self.root = new_node
+       15 |             return
+       16 |         
+       17 |         self._insert_recursive(self.root, new_node)
+       18 |     
+       19 |     def _insert_recursive(self, current_node, new_node):
+       20 |         if new_node.value < current_node.value:
+       21 |             if not current_node.left:
+       22 |                 current_node.left = new_node
+       23 |             else:
+       24 |                 self._insert_recursive(current_node.left, new_node)
+       25 |         else:
+       26 |             if not current_node.right:
+       27 |                 current_node.right = new_node
+       28 |             else:
+       29 |                 self._insert_recursive(current_node.right, new_node)
+       30 | 
+       31 |     def search(self, value):
+       32 |         return self._search_recursive(self.root, value)
+       33 | 
+       34 |     def _search_recursive(self, current_node, value):
+       35 |         if not current_node:
+       36 |             return False
+       37 |         
+       38 |         if current_node.value == value:
+       39 |             return True
+       40 |         elif value < current_node.value:
+       41 |             return self._search_recursive(current_node.left, value)
+       42 |         else:
+       43 |             return self._search_recursive(current_node.right, value)
+       44 |     
+       45 |     def remove(self, value):
+       46 |         self.root = self._remove_recursive(self.root, value)
+       47 | 
+       48 |     def _remove_recursive(self, current_node, value):
+       49 |         if not current_node:
+       50 |             return None
+       51 |         
+       52 |         if value == current_node.value:
+       53 |             if not current_node.left:
+       54 |                 return current_node.right
+       55 |             elif not current_node.right:
+       56 |                 return current_node.left
+       57 |             else:
+       58 |                 min_value = self._find_min_value(current_node.right)
+       59 |                 current_node.value = min_value
+       60 |                 current_node.right = self._remove_recursive(current_node.right, min_value)
+       61 |         elif value < current_node.value:
+       62 |             current_node.left = self._remove_recursive(current_node.left, value)
+       63 |         else:
+       64 |             current_node.right = self._remove_recursive(current_node.right, value)
+       65 |         
+       66 |         return current_node
+       67 |     
+       68 |     def _find_min_value(self, node):
+       69 |         while node.left:
+       70 |             node = node.left
+       71 |         return node.value
+       
         
       </pre>
 
       <pre class="codeslide" id="ruby">
 
-        Ruby: 
+        Ruby Implementation: 
         
-        class Node
-            attr_accessor :value, :left, :right
-            
-            def initialize(value)
-                @value = value
-                @left = nil
-                @right = nil
-            end
-        end
-        
-        class BinaryTree
-            attr_accessor :root
-            
-            def initialize
-                @root = nil
-            end
-          
-            def insert(value)
-                new_node = Node.new(value)
-                if @root.nil?
-                  @root = new_node
-                  return
-                end
-              
-              insert_recursive(@root, new_node)
-            end
-          
-            def insert_recursive(current_node, new_node)
-                if new_node.value < current_node.value
-                    if current_node.left.nil?
-                        current_node.left = new_node
-                    else
-                        insert_recursive(current_node.left, new_node)
-                    end
-                else
-                    if current_node.right.nil?
-                        current_node.right = new_node
-                    else
-                        insert_recursive(current_node.right, new_node)
-                    end
-                end
-            end
-          
-            def search(value)
-                search_recursive(@root, value)
-            end
-          
-            def search_recursive(current_node, value)
-                return false if current_node.nil?
-            
-                if current_node.value == value
-                    return true
-                elsif value < current_node.value
-                    search_recursive(current_node.left, value)
-                else
-                    search_recursive(current_node.right, value)
-                end
-            end
-          
-            def remove(value)
-                @root = remove_recursive(@root, value)
-            end
-          
-            def remove_recursive(current_node, value)
-                return nil if current_node.nil?
-            
-                if value == current_node.value
-                    if current_node.left.nil?
-                        return current_node.right
-                    elsif current_node.right.nil?
-                        return current_node.left
-                    else
-                        min_value = find_min_value(current_node.right)
-                        current_node.value = min_value
-                        current_node.right = remove_recursive(current_node.right, min_value)
-                    end
-                elsif value < current_node.value
-                    current_node.left = remove_recursive(current_node.left, value)
-                else    
-                    current_node.right = remove_recursive(current_node.right, value)
-                end
-            
-                current_node
-            end
-          
-            def find_min_value(node)
-                while node.left
-                    node = node.left
-                end
-                node.value
-            end
-        end
+        1 | class Node
+        2 |     attr_accessor :value, :left, :right
+        3 |     
+        4 |     def initialize(value)
+        5 |         @value = value
+        6 |         @left = nil
+        7 |         @right = nil
+        8 |     end
+        9 | end
+       10 | 
+       11 | class BinaryTree
+       12 |     attr_accessor :root
+       13 |     
+       14 |     def initialize
+       15 |         @root = nil
+       16 |     end
+       17 |     
+       18 |     def insert(value)
+       19 |         new_node = Node.new(value)
+       20 |         if @root.nil?
+       21 |             @root = new_node
+       22 |             return
+       23 |         end
+       24 |         
+       25 |         insert_recursive(@root, new_node)
+       26 |     end
+       27 |     
+       28 |     def insert_recursive(current_node, new_node)
+       29 |         if new_node.value < current_node.value
+       30 |             if current_node.left.nil?
+       31 |                 current_node.left = new_node
+       32 |             else
+       33 |                 insert_recursive(current_node.left, new_node)
+       34 |             end
+       35 |         else
+       36 |             if current_node.right.nil?
+       37 |                 current_node.right = new_node
+       38 |             else
+       39 |                 insert_recursive(current_node.right, new_node)
+       40 |             end
+       41 |         end
+       42 |     end
+       43 |     
+       44 |     def search(value)
+       45 |         search_recursive(@root, value)
+       46 |     end
+       47 |     
+       48 |     def search_recursive(current_node, value)
+       49 |         return false if current_node.nil?
+       50 |         
+       51 |         if current_node.value == value
+       52 |             return true
+       53 |         elsif value < current_node.value
+       54 |             search_recursive(current_node.left, value)
+       55 |         else
+       56 |             search_recursive(current_node.right, value)
+       57 |         end
+       58 |     end
+       59 |     
+       60 |     def remove(value)
+       61 |         @root = remove_recursive(@root, value)
+       62 |     end
+       63 |     
+       64 |     def remove_recursive(current_node, value)
+       65 |         return nil if current_node.nil?
+       66 |         
+       67 |         if value == current_node.value
+       68 |             if current_node.left.nil?
+       69 |                 return current_node.right
+       70 |             elsif current_node.right.nil?
+       71 |                 return current_node.left
+       72 |             else
+       73 |                 min_value = find_min_value(current_node.right)
+       74 |                 current_node.value = min_value
+       75 |                 current_node.right = remove_recursive(current_node.right, min_value)
+       76 |             end
+       77 |         elsif value < current_node.value
+       78 |             current_node.left = remove_recursive(current_node.left, value)
+       79 |         else    
+       80 |             current_node.right = remove_recursive(current_node.right, value)
+       81 |         end
+       82 |         
+       83 |         current_node
+       84 |     end
+       85 |     
+       86 |     def find_min_value(node)
+       87 |         while node.left
+       88 |             node = node.left
+       89 |         end
+       90 |         node.value
+       91 |     end
+       92 | end
+       
       </pre>
     
     </div>
@@ -389,7 +391,26 @@
 
 
   <div id="canvas-container">
+    
   <img class="question" src="https://static-00.iconduck.com/assets.00/question-mark-circled-icon-512x512-wsm5hkwj.png"></a>
+    <div id="tutorial"> 
+        <div><h2>Welcome to the Binary Search Tree Visualizer!</h2>
+        <h3>Get a better idea of how binary search trees (BST's) work through this visual demonstration. Interact with the tree using the buttons below and see the BST at work!</h3> 
+        </div>
+
+        <div>
+        <p>"Generate Random" -> generates a new binary search tree</p>
+        <p>"Insert Node" -> inserts a node with the given value</p>
+        <p>"Remove Node" -> removes a node with the given value</p>
+        <p>"Search" -> searches for a node with the given value</p>
+        </div>
+
+        <div>
+        <p>Learn more about binary search trees by clicking "Lessons" at the top of the page!</p>
+        <p>View the code implementation by clicking "Code" at the top of the page!</p>
+        </div>
+    </div>
+
   <canvas id="canvas"></canvas>
     
     <div id="canvas-buttons">
@@ -431,3 +452,4 @@
 </body>
 
 </html>
+
