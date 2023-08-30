@@ -11,6 +11,8 @@ class Button {
   clickHandle() {
     if (this.button.id === "lessons") {
       this.lesson();
+    } else if (this.button.id === "code") {
+      this.code();
     } else if (this.button.id === "generate-random") {
       this.generate();
     } else if (this.button.id === "insert") {
@@ -35,6 +37,16 @@ class Button {
       document.getElementById("slide-container").style.display = "flex";
       document.getElementById("0").style.display = "flex";
       document.getElementById("lessons").name = "true";
+      document.getElementById("canvas-container").style.display = "none";
+    }
+  }
+
+  code() {
+    if (document.getElementById("code").name === "false") {
+      document.getElementById("code-container").style.display = "flex";
+      document.getElementById("0").style.display = "flex";
+      document.getElementById("code").name = "true";
+      document.getElementById("canvas-container").style.display = "none";
     }
   }
 

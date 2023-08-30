@@ -14,7 +14,6 @@ class Slide {
   }
 
   showSlide(index) {
-    // debugger;
     for (let i = 0; i < this.slides.length; i++) {
       if (i === index) {
         this.slides[i].style.display = "flex";
@@ -27,6 +26,7 @@ class Slide {
   hideSlide(index) {
     document.getElementById("slide-container").style.display = "none";
     document.getElementById(`${this.index}`).style.display = "none";
+    document.getElementById("canvas-container").style.display = "flex";
   }
 
   clickHandle(event) {
@@ -44,12 +44,6 @@ class Slide {
       this.hideSlide(this.index);
       document.getElementById("lessons").name = "false";
     }
-
-    // if (currentSlideIndex < 0) {
-    //   currentSlideIndex = 0;
-    // } else if (currentSlideIndex >= slides.length) {
-    //   currentSlideIndex = slides.length - 1;
-    // }
   }
 }
 

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-128-thumb/binary-tree-diagram-484863.png">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet">
+    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-128-thumb/binary-tree-diagram-484863.png">
     <script src="./dist/main.js"></script>
     <title>Binary Tree Visualizer</title>
   </head>
@@ -20,8 +22,8 @@
     <button class="button-50" role="button" id="code" name="false">Code</button>
 
   <div class="profile">
-    <a target="_blank" href="https://github.com/wc2184/SortAlg"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
-    <a target="_blank" href="https://linkedin.com/"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"></a>
+    <a target="_blank" href="https://mudassarmemon.github.io/JavascriptDemo/"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
+    <a target="_blank" href="https://www.linkedin.com/in/mudassar-memon-0a48b1125"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"></a>
   </div>
 </header>
 
@@ -93,6 +95,298 @@
     
     </div>
   </div>
+
+
+
+
+
+  <div id="code-container">
+    <div class="code">
+      
+      <ul>
+      <li><img id="javascriptCode" name= "active" src="https://www.vhv.rs/dpng/d/456-4562295_library-of-javascript-icon-graphic-freeuse-png-files.png"></li>
+      <li><img id="pythonCode" name= "inactive"src="https://logos-world.net/wp-content/uploads/2021/10/Python-Symbol.png"></li>
+      <li><img id="rubyCode" name= "inactive" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/ruby_plain_wordmark_logo_icon_146362.png"></li>
+      <li class="closecode"><button id="closecode"><img id="closecode" src="./src/img/close.png"></i></button></li>
+    </ul>
+
+    <pre class="codeslide" id="java">
+
+      Javascript:
+
+      class Node {
+          constructor(value) {
+              this.value = value;
+              this.left = null;
+              this.right = null;
+          }
+      }
+      
+      class BinaryTree {
+          constructor() {
+              this.root = null;
+          }
+      
+          insert(value) {
+              const newNode = new Node(value);
+              if (!this.root) {
+                  this.root = newNode;
+                  return;
+              }
+      
+              this._insertRecursive(this.root, newNode);
+          }
+      
+          _insertRecursive(currentNode, newNode) {
+              if (newNode.value < currentNode.value) {
+                  if (!currentNode.left) {
+                      currentNode.left = newNode;
+                  } else {
+                      this._insertRecursive(currentNode.left, newNode);
+                  }
+              } else {
+                  if (!currentNode.right) {
+                      currentNode.right = newNode;
+                  } else {
+                      this._insertRecursive(currentNode.right, newNode);
+                  }
+              }
+          }
+      
+          search(value) {
+              return this._searchRecursive(this.root, value);
+          }
+      
+          _searchRecursive(currentNode, value) {
+              if (!currentNode) {
+                  return false;
+              }
+      
+              if (currentNode.value === value) {
+                  return true;
+              } else if (value < currentNode.value) {
+                  return this._searchRecursive(currentNode.left, value);
+              } else {
+                  return this._searchRecursive(currentNode.right, value);
+              }
+          }
+      
+          remove(value) {
+              this.root = this._removeRecursive(this.root, value);
+          }
+      
+          _removeRecursive(currentNode, value) {
+              if (!currentNode) {
+                  return null;
+              }
+      
+              if (value === currentNode.value) {
+                  if (!currentNode.left) {
+                      return currentNode.right;
+                  } else if (!currentNode.right) {
+                      return currentNode.left;
+                  } else {
+                      const minValue = this._findMinValue(currentNode.right);
+                      currentNode.value = minValue;
+                      currentNode.right = this._removeRecursive(currentNode.right, minValue);
+                  }
+              } else if (value < currentNode.value) {
+                  currentNode.left = this._removeRecursive(currentNode.left, value);
+              } else {
+                  currentNode.right = this._removeRecursive(currentNode.right, value);
+              }
+      
+              return currentNode;
+          }
+      
+          _findMinValue(node) {
+              while (node.left) {
+                  node = node.left;
+              }
+              return node.value;
+          }
+      }
+      </pre>
+
+      <pre class="codeslide" id="python">
+
+        Python:
+
+        class Node:
+            def __init__(self, value):
+                self.value = value
+                self.left = None
+                self.right = None
+    
+        class BinaryTree:
+            def __init__(self):
+                self.root = None
+        
+            def insert(self, value):
+                new_node = Node(value)
+                if not self.root:
+                    self.root = new_node
+                    return
+                
+                self._insert_recursive(self.root, new_node)
+            
+            def _insert_recursive(self, current_node, new_node):
+                if new_node.value < current_node.value:
+                    if not current_node.left:
+                        current_node.left = new_node
+                    else:
+                        self._insert_recursive(current_node.left, new_node)
+                else:
+                    if not current_node.right:
+                        current_node.right = new_node
+                    else:
+                        self._insert_recursive(current_node.right, new_node)
+        
+            def search(self, value):
+                return self._search_recursive(self.root, value)
+        
+            def _search_recursive(self, current_node, value):
+                if not current_node:
+                    return False
+                
+                if current_node.value == value:
+                    return True
+                elif value < current_node.value:
+                    return self._search_recursive(current_node.left, value)
+                else:
+                    return self._search_recursive(current_node.right, value)
+            
+            def remove(self, value):
+                self.root = self._remove_recursive(self.root, value)
+        
+            def _remove_recursive(self, current_node, value):
+                if not current_node:
+                    return None
+                
+                if value == current_node.value:
+                    if not current_node.left:
+                        return current_node.right
+                    elif not current_node.right:
+                        return current_node.left
+                    else:
+                        min_value = self._find_min_value(current_node.right)
+                        current_node.value = min_value
+                        current_node.right = self._remove_recursive(current_node.right, min_value)
+                elif value < current_node.value:
+                    current_node.left = self._remove_recursive(current_node.left, value)
+                else:
+                    current_node.right = self._remove_recursive(current_node.right, value)
+                
+                return current_node
+            
+            def _find_min_value(self, node):
+                while node.left:
+                    node = node.left
+                return node.value
+        
+      </pre>
+
+      <pre class="codeslide" id="ruby">
+
+        Ruby: 
+        
+        class Node
+            attr_accessor :value, :left, :right
+            
+            def initialize(value)
+                @value = value
+                @left = nil
+                @right = nil
+            end
+        end
+        
+        class BinaryTree
+            attr_accessor :root
+            
+            def initialize
+                @root = nil
+            end
+          
+            def insert(value)
+                new_node = Node.new(value)
+                if @root.nil?
+                  @root = new_node
+                  return
+                end
+              
+              insert_recursive(@root, new_node)
+            end
+          
+            def insert_recursive(current_node, new_node)
+                if new_node.value < current_node.value
+                    if current_node.left.nil?
+                        current_node.left = new_node
+                    else
+                        insert_recursive(current_node.left, new_node)
+                    end
+                else
+                    if current_node.right.nil?
+                        current_node.right = new_node
+                    else
+                        insert_recursive(current_node.right, new_node)
+                    end
+                end
+            end
+          
+            def search(value)
+                search_recursive(@root, value)
+            end
+          
+            def search_recursive(current_node, value)
+                return false if current_node.nil?
+            
+                if current_node.value == value
+                    return true
+                elsif value < current_node.value
+                    search_recursive(current_node.left, value)
+                else
+                    search_recursive(current_node.right, value)
+                end
+            end
+          
+            def remove(value)
+                @root = remove_recursive(@root, value)
+            end
+          
+            def remove_recursive(current_node, value)
+                return nil if current_node.nil?
+            
+                if value == current_node.value
+                    if current_node.left.nil?
+                        return current_node.right
+                    elsif current_node.right.nil?
+                        return current_node.left
+                    else
+                        min_value = find_min_value(current_node.right)
+                        current_node.value = min_value
+                        current_node.right = remove_recursive(current_node.right, min_value)
+                    end
+                elsif value < current_node.value
+                    current_node.left = remove_recursive(current_node.left, value)
+                else    
+                    current_node.right = remove_recursive(current_node.right, value)
+                end
+            
+                current_node
+            end
+          
+            def find_min_value(node)
+                while node.left
+                    node = node.left
+                end
+                node.value
+            end
+        end
+      </pre>
+    
+    </div>
+  </div>
+
 
   <div id="canvas-container">
   <img class="question" src="https://static-00.iconduck.com/assets.00/question-mark-circled-icon-512x512-wsm5hkwj.png"></a>

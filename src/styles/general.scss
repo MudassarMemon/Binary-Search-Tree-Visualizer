@@ -2,6 +2,10 @@
     font-family: "Comfortaa";
 }
 
+pre{
+  font-family: 'Cascadia Code', sans-serif;
+}
+
 body {
     margin: 0;
     margin-bottom: 20px;
@@ -32,6 +36,7 @@ header {
 header > h1 {
     color: rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 15px rgba(120, 162, 210, 0.716);
 }
 
 img, button {
@@ -46,7 +51,6 @@ img, button {
     position: absolute;
     bottom: 60px;
     left: 50px;
-
 }
 
 /* CSS */
@@ -62,7 +66,7 @@ img, button {
   cursor: pointer;
   display: inline-block;
   font-family: "Comfortaa";
-    font-size: 14px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   margin: 5px 5px 10px 0;
@@ -101,5 +105,6 @@ img, button {
     padding: 12px 50px;
   }
 }
+
 
     

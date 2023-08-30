@@ -4,17 +4,19 @@
 #slide-container {
   width: 100vw;
   height: 100vh;
-  background-color: #f0f0f0;
+  background: none;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
   display: none;
   align-items: flex-start;
   justify-content: center;
+  padding: 10px;
 }
 
 .slides {
   width: 80%;
+  height: 80%;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
@@ -52,6 +54,10 @@ div.slides > ul {
   font-family: "Comfortaa";
 }
 
+pre {
+  font-family: "Cascadia Code", sans-serif;
+}
+
 body {
   margin: 0;
   margin-bottom: 20px;
@@ -78,6 +84,7 @@ header {
 header > h1 {
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 15px rgba(120, 162, 210, 0.716);
 }
 
 img, button {
@@ -217,4 +224,93 @@ img, button {
 #canvas-buttons > div {
   display: flex;
   flex-flow: row wrap;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+img:hover {
+  transform: translateY(-2px);
+}
+
+#code-container {
+  width: 100vw;
+  height: 100vh;
+  background: none;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+}
+
+pre {
+  width: 80%;
+  padding: 20px;
+  padding-top: 100px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  margin: 0;
+}
+
+pre#java {
+  display: flex;
+}
+
+div.code {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+div.code > div {
+  display: none;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+  border-width: 2px;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+#javascriptCode, #rubyCode, #pythonCode {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  box-shadow: 0 8px 16px 0 rgba(120, 162, 210, 0.2), 0 6px 20px 0 rgba(120, 162, 210, 0.238);
+}
+
+#pythonCode {
+  width: 90px;
+  height: 50px;
+}
+
+#closecode {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+}
+
+div.code > ul > li {
+  list-style: none;
+}
+
+div.code > ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 40px;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
 }

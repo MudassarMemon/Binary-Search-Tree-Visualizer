@@ -72,3 +72,11 @@
         display: flex;
         flex-flow: row wrap;
     }
+
+    button:hover{
+        transform: translateY(-2px);
+    }
+
+    img:hover{
+        transform: translateY(-2px);
+    }

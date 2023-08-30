@@ -1,5 +1,6 @@
 import Button from "./scripts/button";
 import Slide from "./scripts/slide";
+import Code from "./scripts/code";
 import { Arrow, Circle, Node, BinarySearchTree } from "./scripts/bst";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const slides = document.getElementsByClassName("slide");
   new Slide(slides);
+
+  const codeSlides = document.getElementsByClassName("codeslide");
+  new Code(codeSlides);
 
   const canvas = document.getElementById("canvas");
   let windowHeight = window.innerHeight;
