@@ -35,18 +35,30 @@ class Button {
   lesson() {
     if (document.getElementById("lessons").name === "false") {
       document.getElementById("slide-container").style.display = "flex";
-      document.getElementById("0").style.display = "flex";
       document.getElementById("lessons").name = "true";
       document.getElementById("canvas-container").style.display = "none";
+
+      document.getElementById("code-container").style.display = "none";
+      document.getElementById("code").name = "false";
+    } else {
+      document.getElementById("slide-container").style.display = "none";
+      document.getElementById("lessons").name = "false";
+      document.getElementById("canvas-container").style.display = "flex";
     }
   }
 
   code() {
     if (document.getElementById("code").name === "false") {
       document.getElementById("code-container").style.display = "flex";
-      document.getElementById("0").style.display = "flex";
       document.getElementById("code").name = "true";
       document.getElementById("canvas-container").style.display = "none";
+
+      document.getElementById("slide-container").style.display = "none";
+      document.getElementById("lessons").name = "false";
+    } else {
+      document.getElementById("code-container").style.display = "none";
+      document.getElementById("code").name = "false";
+      document.getElementById("canvas-container").style.display = "flex";
     }
   }
 

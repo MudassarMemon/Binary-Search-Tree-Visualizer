@@ -26,6 +26,8 @@ class Slide {
   hideSlide(index) {
     document.getElementById("slide-container").style.display = "none";
     document.getElementById(`${this.index}`).style.display = "none";
+    document.getElementById(`0`).style.display = "flex";
+    this.index = 0;
     document.getElementById("canvas-container").style.display = "flex";
   }
 
