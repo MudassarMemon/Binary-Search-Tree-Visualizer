@@ -11,11 +11,10 @@
   display: none;
   align-items: flex-start;
   justify-content: center;
-  padding: 20px;
 }
 
 .slides {
-  width: 100%;
+  width: 80%;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
@@ -24,6 +23,7 @@
 
 div.slides > div {
   display: none;
+  flex-flow: row wrap;
 }
 
 img#prev {
@@ -37,12 +37,24 @@ img#prev {
   border: none;
 }
 
+div.slides > ul > li {
+  list-style: none;
+}
+
+div.slides > ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
 * {
   font-family: "Comfortaa";
 }
 
 body {
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
   font-family: Arial, sans-serif;
   background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
@@ -59,34 +71,13 @@ header {
   padding: 0px 50px;
   margin: 0;
   font-family: "Comfortaa";
-  font-size: x-large;
+  font-size: large;
   text-decoration: white;
-  border: rgb(0, 0, 0);
-  border-style: solid;
 }
 
 header > h1 {
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-footer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 10px;
-  border: red;
-  border-style: solid;
-}
-
-nav {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0px 50px;
 }
 
 img, button {
@@ -95,10 +86,11 @@ img, button {
 
 .question {
   cursor: help;
-  width: 50px;
-  height: 50px;
-  position: relative;
-  top: 5px;
+  width: 30px;
+  height: 37px;
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
 }
 
 /* CSS */
@@ -107,7 +99,7 @@ img, button {
   background-color: #000;
   background-image: none;
   border: 1px solid #000;
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
   box-sizing: border-box;
   color: #fff;
@@ -154,6 +146,7 @@ img, button {
   }
 }
 #canvas-container {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -188,6 +181,7 @@ img, button {
   font-size: 16px;
   padding: 0 6px;
   padding-left: 12px;
+  margin: 0px 5px;
 }
 
 .canvas-input:focus {
@@ -205,7 +199,6 @@ img, button {
   border: 0;
   cursor: pointer;
   border-radius: 8px;
-  padding: 0px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;

@@ -8,11 +8,10 @@
     display: none;
     align-items: flex-start;
     justify-content: center;
-    padding: 20px;
 }
 
 .slides {
-    width: 100%;
+    width: 80%;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -21,6 +20,7 @@
 
 div.slides > div {
     display: none;
+    flex-flow: row wrap;
 }
 
 img#prev{
@@ -32,4 +32,15 @@ img#prev{
     height: 50px;
     background:none;
     border:none;
+}
+
+div.slides > ul > li{
+    list-style: none;
+}
+
+div.slides > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-end;
 }

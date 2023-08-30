@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    margin-bottom: 20px;
     padding: 0;
     font-family: Arial, sans-serif;
     //background-image: url(https://img.freepik.com/free-vector/colored-points-connected-net_1048-12426.jpg?w=1480&t=st=1693330264~exp=1693330864~hmac=ef2df19047d9aa90700e2ec0a759ebad9da125c4d48ee446bd6312ece9ded497");
@@ -24,36 +25,13 @@ header {
     padding: 0px 50px;
     margin: 0;
     font-family: "Comfortaa";
-    font-size: x-large;
+    font-size: large;
     text-decoration: white;
-    border:rgb(0, 0, 0);
-    border-style: solid;
 }
 
 header > h1 {
     color: rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.5);
-}
-
-footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 10px;
-
-    border:red;
-    border-style: solid;
-}
-
-
-nav{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin:0;
-    padding: 0px 50px;
 }
 
 img, button {
@@ -63,12 +41,12 @@ img, button {
 
 .question{
     cursor: help;
-    width: 50px;
-    height: 50px;
-    position: relative;
-    top: 5px;
-    // left: 200px;
-    // z-index: 0;
+    width: 30px;
+    height: 37px;
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+
 }
 
 /* CSS */
@@ -77,7 +55,7 @@ img, button {
   background-color: #000;
   background-image: none;
   border: 1px solid #000;
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
   box-sizing: border-box;
   color: #fff;

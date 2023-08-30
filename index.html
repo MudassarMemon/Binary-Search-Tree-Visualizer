@@ -15,8 +15,9 @@
 
   <h1>Binary Search Tree Visualizer</h1>
 
-  <a id="placeholder"></a>
 
+    <button class="button-50" role="button" id="lessons" name="false">Lessons</button>
+    <button class="button-50" role="button" id="code" name="false">Code</button>
 
   <div class="profile">
     <a target="_blank" href="https://github.com/wc2184/SortAlg"><img src="https://img.icons8.com/sf-ultralight/52/000000/github.png"></a>
@@ -24,26 +25,16 @@
   </div>
 </header>
 
-<nav>
-<div>
-  <button class="button-50" role="button" id="lessons" name="false">Lessons</button>
-  <button class="button-50" role="button" id="code" name="false">Code</button>
-</div>
-
-<div>
-  <img class="question" src="https://static.thenounproject.com/png/4407372-200.png"></a>
-</div>
-</nav>
-
 <body>
 
   <div id="slide-container">
     <div class="slides">
       
-      <button id="prev"><img id="prev" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button>
-      <button id="next"><img id="next" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button>
-      <button id="close"><img id="close" src="./src/img/close.png"></i></button>
-
+      <ul>
+      <li><button id="prev"><img id="prev" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button></li>
+      <li class="close"><button id="close"><img id="close" src="./src/img/close.png"></i></button></li>
+      <li><button id="next"><img id="next" src="https://img.icons8.com/plasticine/100/000000/arrow.png"></button></li>
+    </ul>
         <div class="slide" id="0">
           <h2>1. Introduction to Binary Search Trees:</h2>
           <p>A Binary Search Tree is a hierarchical data structure that stores elements in a way that enables efficient searching, insertion, and deletion operations.</p>
@@ -104,9 +95,11 @@
   </div>
 
   <div id="canvas-container">
-    <canvas id="canvas"></canvas>
+  <img class="question" src="https://static-00.iconduck.com/assets.00/question-mark-circled-icon-512x512-wsm5hkwj.png"></a>
+  <canvas id="canvas"></canvas>
     
     <div id="canvas-buttons">
+
       <div>
       <button class="canvas-button" id="generate-random">
         <span class="button_top"> Generate Random
@@ -139,11 +132,8 @@
     </div>
 
     </div>
+
   </div>
 </body>
-
-<footer>  
-  <h2>footer</h2>
-</footer>
 
 </html>

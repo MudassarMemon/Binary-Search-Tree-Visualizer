@@ -45,7 +45,7 @@ class Button {
 
     const uniqueNums = [];
 
-    while (uniqueNums.length < 7) {
+    while (uniqueNums.length < 4) {
       let randomNum = Math.floor(Math.random() * 100);
       if (
         !uniqueNums.includes(randomNum) &&
@@ -57,14 +57,14 @@ class Button {
       }
     }
 
-    while (uniqueNums.length < 11) {
+    while (uniqueNums.length < 8) {
       let randomNum = Math.floor(Math.random() * 100);
       if (!uniqueNums.includes(randomNum) && randomNum > 0 && randomNum < 40) {
         uniqueNums.push(randomNum);
       }
     }
 
-    while (uniqueNums.length < 15) {
+    while (uniqueNums.length < 12) {
       let randomNum = Math.floor(Math.random() * 100);
       if (!uniqueNums.includes(randomNum) && randomNum > 0 && randomNum > 60) {
         uniqueNums.push(randomNum);

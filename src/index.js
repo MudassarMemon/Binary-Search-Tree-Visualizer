@@ -25,3 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
   //   unbalanced bst
   //   uniqueNums.sort((a, b) => a - b);
 });
+
+// make a feature for when i click the title it goes to homepage and closes the slides div
+// make a feature lessons closes and opens the slides
+// make a cool rounded border for my title
+//canvas border
+//
