@@ -25,7 +25,7 @@ class BinarySearchTree {
   getNodeList() {
     const nodeListValues = [];
     this.nodeList.forEach((node) => {
-      nodeListValues.push(node.value);
+      nodeListValues.push(`${node.value}`);
     });
     return nodeListValues;
   }

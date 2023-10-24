@@ -1,62 +1,125 @@
 #slide-container {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     background: none;
     display: none;
     align-items: flex-start;
     justify-content: center;
     padding: 10px;
+    overflow-y: hidden;
 }
 
 .slides {
     width: 80%;
-    height: 100%;
+    height: 95%;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 6px 20px 2px rgba(120, 162, 210, 0.734)
 }
 
-div.slides > div {
+div.slides>div {
     display: none;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: flex-start;
     align-items: center;
 }
 
-div.slide:first-of-type{
+div.slide:first-of-type {
     display: flex;
 }
 
-img#prev{
+img#prev {
     transform: rotate(180deg);
 }
 
-#prev, #next, #close{
+#prev,
+#next,
+#close {
     width: 50px;
     height: 50px;
-    background:none;
-    border:none;
+    background: none;
+    border: none;
 }
 
-div.slides > ul > li{
+div.slides>ul>li {
     list-style: none;
 }
 
-div.slides > ul {
+div.slides>ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: flex-end;
 }
 
-#imgslide1{
-    width:40%;
-    height: 40%;
+.slide h2 {
+    width: 100%;
+    padding-left: 50px;
 }
 
- #imgslide2 {
-    width:30%;
-    height: 30%;
+.slide p {
+    padding: 0px 75px;
+    width: 100%;
+}
+
+img#slide1 {
+    height: 600px;
+    width: 1000px;
+    transform: scale(.5);
+    object-fit: cover;
+    object-position: center;
+    margin: 0 250px;
+    position: relative;
+    bottom: 150px;
+}
+
+img#slide2 {
+    height: 600px;
+    width: 1000px;
+    transform: scale(.5);
+    object-fit: cover;
+    object-position: center;
+    margin: 0 250px;
+    position: relative;
+    bottom: 250px;
+    left: 400px;
+}
+
+img#slide3 {
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+    transform: scale(.7);
+    padding: 0px 150px;
+}
+
+img#slide4 {
+    transform: scale(.7);
+    padding: 0px 300px;
+}
+
+img#slide5 {
+    transform: scale(1.05);
+    padding: 20px 300px;
+}
+
+img#slide6 {
+    transform: scale(1.05);
+    padding: 40px 400px;
+}
+
+img#slide7 {
+    transform: scale(.3);
+    position: relative;
+    bottom: 500px;
+    left: 150px;
+}
+
+img#slide8 {
+    transform: scale(.2);
+    position: relative;
+    bottom: 750px;
+    right: 150px;
 }
