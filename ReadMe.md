@@ -16,7 +16,7 @@ Description: Execute fundamental BST operations such as insertion, deletion, and
 
 * Insert:
   
-![Screenshots of insertion](https://i.imgur.com/yjA2smd.gif)
+![Screenshots of insertion](https://i.imgur.com/uR2gyWD.gif)
 
 * Delete:
   
