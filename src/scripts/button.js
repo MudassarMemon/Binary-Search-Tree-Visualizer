@@ -121,17 +121,14 @@ class Button {
   }
 
   insert(num) {
-    console.log("adding...");
     Button.bst.insert(num);
   }
 
   remove(num) {
-    console.log("removing...");
     Button.bst.remove(num);
   }
 
   search(num) {
-    console.log("search...");
     Button.bst.search(num);
   }
 }

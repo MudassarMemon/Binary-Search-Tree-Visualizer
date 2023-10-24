@@ -53,7 +53,6 @@ class BinarySearchTree {
     while (true) {
       //avoid duplicates
       if (value == current.value) {
-        console.log("This value already exists!");
         return undefined;
       }
 
