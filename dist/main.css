@@ -101,7 +101,8 @@ header > h1 {
   text-shadow: 0 0 15px rgba(120, 162, 210, 0.688);
 }
 
-img, button {
+img,
+button {
   cursor: pointer;
 }
 
@@ -139,7 +140,7 @@ img, button {
 
 .button-50:hover {
   text-decoration: none;
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 .button-50:active {
@@ -149,7 +150,7 @@ img, button {
 
 .button-50:not([disabled]):active {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-  transform: translate(2px, 2px);
+  transform: scale(1.1);
 }
 
 @media (min-width: 768px) {
@@ -175,14 +176,27 @@ img, button {
   width: 80%;
   display: flex;
   justify-content: space-around;
-  height: 20px;
-  margin: 10px;
+  height: 50px;
+  margin: 20px 10px;
+}
+
+#canvas-buttons div {
+  height: 50px;
+}
+
+button {
+  height: 50px;
+}
+
+button * {
+  font-size: 25px;
+  font-weight: 600;
 }
 
 .canvas-input {
   border: 3px solid #000;
-  border-radius: 5px;
-  height: 30px;
+  border-radius: 8px;
+  height: 50px;
   background-image: linear-gradient(to right, skyblue, lightgreen);
   line-height: normal;
   color: #282828;
@@ -190,10 +204,11 @@ img, button {
   width: 100px;
   box-sizing: border-box;
   user-select: auto;
-  font-size: 16px;
+  font-size: 25px;
+  font-weight: 600;
   padding: 0 6px;
   padding-left: 12px;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
 
 .canvas-input:focus {
@@ -207,7 +222,7 @@ img, button {
   align-content: center;
   justify-content: center;
   outline: 0;
-  height: 30px;
+  height: 50px;
   border: 0;
   cursor: pointer;
   border-radius: 8px;
@@ -223,7 +238,7 @@ img, button {
 }
 
 .canvas-button:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 #canvas-buttons > div {
@@ -232,7 +247,7 @@ img, button {
 }
 
 button:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 img:hover {
@@ -241,11 +256,11 @@ img:hover {
 
 .question {
   cursor: help;
-  width: 30px;
+  width: 35px;
   height: 37px;
   position: absolute;
-  bottom: 60px;
-  left: 50px;
+  bottom: 110px;
+  left: 70px;
 }
 
 div#tutorial {

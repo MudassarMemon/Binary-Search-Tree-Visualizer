@@ -1,4 +1,8 @@
 import { Arrow, Circle, Node, BinarySearchTree } from "./bst";
+let numbers = [];
+for (let i = 1; i < 100; i++) {
+  numbers.push(`${i}`);
+}
 
 class Button {
   static bst = null;
@@ -18,15 +22,31 @@ class Button {
     } else if (this.button.id === "insert") {
       let num = document.querySelector("input#insert").value;
       document.querySelector("input#insert").value = "";
-      this.insert(num);
+      if (numbers.includes(num)) {
+        this.insert(num);
+      } else {
+        window.alert("Please enter a number between 0-99.");
+      }
     } else if (this.button.id === "remove") {
       let num = document.querySelector("input#remove").value;
       document.querySelector("input#remove").value = "";
-      this.remove(num);
+      if (Button.bst.getNodeList().includes(num) && numbers.includes(num)) {
+        this.remove(num);
+      } else if (!Button.bst.getNodeList().includes(num)) {
+        window.alert("That number does not exist in the tree.");
+      } else {
+        window.alert("Please enter a number between 0-99.");
+      }
     } else if (this.button.id === "search") {
       let num = document.querySelector("input#search").value;
       document.querySelector("input#search").value = "";
-      this.search(num);
+      if (Button.bst.getNodeList().includes(num) && numbers.includes(num)) {
+        this.search(num);
+      } else if (!Button.bst.getNodeList().includes(num)) {
+        window.alert("That number does not exist in the tree.");
+      } else {
+        window.alert("Please enter a number between 0-99.");
+      }
     } else if (this.button.id === "traverse") {
       this.traverse();
     }
@@ -65,7 +85,7 @@ class Button {
   generate() {
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
-    context.clearRect(0, 0, 1500, 700);
+    context.clearRect(0, 0, 1800, 700);
 
     const uniqueNums = [];
 

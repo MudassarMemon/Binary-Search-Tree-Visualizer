@@ -22,6 +22,14 @@ class BinarySearchTree {
     this.nodeList = [];
   }
 
+  getNodeList() {
+    const nodeListValues = [];
+    this.nodeList.forEach((node) => {
+      nodeListValues.push(node.value);
+    });
+    return nodeListValues;
+  }
+
   //inserts new nodes with the input values
   insert(value) {
     //declare variables to be used in insert func
@@ -207,7 +215,7 @@ class BinarySearchTree {
 
         //update connections between nodes after removal
         await new Promise((resolve) => setTimeout(resolve, 2500));
-        context.clearRect(0, 0, 1500, 700);
+        context.clearRect(0, 0, 1800, 700);
 
         this.nodeList.splice(indexToRemove, 1);
 
@@ -281,7 +289,7 @@ class BinarySearchTree {
     //clear canvas
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
-    context.clearRect(0, 0, 1500, 700);
+    context.clearRect(0, 0, 1800, 700);
 
     //reset this.circles array and update
     let prevCircles = this.circles;
@@ -300,7 +308,7 @@ class BinarySearchTree {
     //clear canvas
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
-    context.clearRect(0, 0, 1500, 700);
+    context.clearRect(0, 0, 1800, 700);
 
     //add circles to canvas
     this.circles.forEach((circle) => {

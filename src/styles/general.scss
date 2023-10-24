@@ -1,46 +1,46 @@
 * {
-    font-family: "Comfortaa";
+  font-family: "Comfortaa";
 }
 
-pre{
+pre {
   font-family: 'Cascadia Code', sans-serif;
 }
 
 body {
-    margin: 0;
-    margin-bottom: 20px;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    //background-image: url(https://img.freepik.com/free-vector/colored-points-connected-net_1048-12426.jpg?w=1480&t=st=1693330264~exp=1693330864~hmac=ef2df19047d9aa90700e2ec0a759ebad9da125c4d48ee446bd6312ece9ded497");
-    background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
-    // background-image: url("https://images.pond5.com/network-nodes-connected-background-footage-089996011_prevstill.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-    
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  //background-image: url(https://img.freepik.com/free-vector/colored-points-connected-net_1048-12426.jpg?w=1480&t=st=1693330264~exp=1693330864~hmac=ef2df19047d9aa90700e2ec0a759ebad9da125c4d48ee446bd6312ece9ded497");
+  background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
+  // background-image: url("https://images.pond5.com/network-nodes-connected-background-footage-089996011_prevstill.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 
 header {
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 50px;
-    margin: 0;
-    font-family: "Comfortaa";
-    font-size: large;
-    text-decoration: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  margin: 0;
+  font-family: "Comfortaa";
+  font-size: large;
+  text-decoration: white;
 }
 
-header > h1 {
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.5);
-    text-shadow: 0 0 15px rgba(120, 162, 210, 0.688);
+header>h1 {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 15px rgba(120, 162, 210, 0.688);
 }
 
-img, button {
-    cursor: pointer;
+img,
+button {
+  cursor: pointer;
 }
 
 
@@ -51,7 +51,7 @@ img, button {
   background-image: none;
   border: 1px solid #000;
   border-radius: 8px;
-  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -78,7 +78,7 @@ img, button {
 
 .button-50:hover {
   text-decoration: none;
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 .button-50:active {
@@ -88,7 +88,7 @@ img, button {
 
 .button-50:not([disabled]):active {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
-  transform: translate(2px, 2px);
+  transform: scale(1.1);
 }
 
 @media (min-width: 768px) {
@@ -96,6 +96,3 @@ img, button {
     padding: 12px 50px;
   }
 }
-
-
-    
