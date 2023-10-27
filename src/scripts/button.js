@@ -87,7 +87,10 @@ class Button {
   generate() {
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
-    context.clearRect(0, 0, 1800, 700);
+    const height = window.innerHeight * 0.75;
+    const width = window.innerWidth * 0.9;
+
+    context.clearRect(0, 0, width, height);
 
     const uniqueNums = [];
 

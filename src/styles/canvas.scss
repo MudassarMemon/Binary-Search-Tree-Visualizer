@@ -99,8 +99,8 @@ img#dev-links:hover {
     width: 35px;
     height: 37px;
     position: absolute;
-    bottom: 110px;
-    left: 70px;
+    bottom: 15%;
+    left: 6%;
 }
 
 div#tutorial {
@@ -120,6 +120,4 @@ div#tutorial {
 .question:hover+div#tutorial {
     display: flex;
     flex-flow: column wrap;
-
-
 }

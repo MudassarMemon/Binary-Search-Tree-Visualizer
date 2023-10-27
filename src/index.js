@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   new Code(codeSlides);
 
   const canvas = document.getElementById("canvas");
-  canvas.width = 1800;
-  canvas.height = 700;
+  canvas.height = window.innerHeight * 0.75;
+  canvas.width = window.innerWidth * 0.9;
   canvas.style.background = "linear-gradient(skyblue, lightgreen)";
 
   const pressGenerate = document.querySelector("button#generate-random");
