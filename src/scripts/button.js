@@ -22,7 +22,9 @@ class Button {
     } else if (this.button.id === "insert") {
       let num = document.querySelector("input#insert").value;
       document.querySelector("input#insert").value = "";
-      if (numbers.includes(num)) {
+      if (Button.bst.getNodeList().includes(num)) {
+        window.alert("That number already exists in the tree.");
+      } else if (numbers.includes(num)) {
         this.insert(num);
       } else {
         window.alert("Please enter a number between 0-99.");
