@@ -1,3 +1,456 @@
-#slide-container{width:100vw;height:80vh;background:none;display:none;align-items:flex-start;justify-content:center;padding:10px;overflow-y:hidden}.slides{width:80%;height:95%;padding:20px;background-color:#fff;border-radius:8px;box-shadow:0px 6px 20px 2px rgba(120,162,210,.734)}div.slides>div{display:none;flex-flow:row wrap;justify-content:flex-start;align-content:flex-start;align-items:center}div.slide:first-of-type{display:flex}img#prev{transform:rotate(180deg)}#prev,#next,#close{width:50px;height:50px;background:none;border:none}div.slides>ul>li{list-style:none}div.slides>ul{display:flex;flex-flow:row wrap;justify-content:space-around;align-items:flex-end}.slide h2{width:100%;padding-left:50px}.slide p{padding:0px 75px;width:100%}img#slide1{height:600px;width:1000px;transform:scale(0.5);object-fit:cover;object-position:center;margin:0 250px;position:relative;bottom:150px}img#slide2{height:600px;width:1000px;transform:scale(0.5);object-fit:cover;object-position:center;margin:0 250px;position:relative;bottom:250px;left:400px}img#slide3{height:300px;width:400px;object-fit:contain;transform:scale(0.7);padding:0px 150px}img#slide4{transform:scale(0.7);padding:0px 300px}img#slide5{transform:scale(1.05);padding:20px 300px}img#slide6{transform:scale(1.05);padding:40px 400px}img#slide7{transform:scale(0.3);position:relative;bottom:500px;left:150px}img#slide8{transform:scale(0.2);position:relative;bottom:750px;right:150px}*{font-family:"Comfortaa"}pre{font-family:"Cascadia Code",sans-serif}body{margin:0;padding:0;font-family:Arial,sans-serif;background-image:url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");background-repeat:repeat;background-position:center;background-size:cover;width:100vw;height:100vh;overflow-x:hidden}header{display:flex;flex-flow:row wrap;justify-content:space-between;align-items:center;padding:0px 50px;margin:0;font-family:"Comfortaa";font-size:large;text-decoration:#fff}header>h1{color:#000;background-color:rgba(255,255,255,.5);text-shadow:0 0 15px rgba(120,162,210,.688)}img,button{cursor:pointer}.button-50{appearance:button;background-color:#000;background-image:none;border:1px solid #000;border-radius:8px;box-shadow:#fff 4px 4px 0 0,#000 4px 4px 0 1px;box-sizing:border-box;color:#fff;cursor:pointer;display:inline-block;font-family:"Comfortaa";font-size:14px;font-weight:400;line-height:20px;margin:5px 5px 10px 0;overflow:visible;padding:12px 40px;text-align:center;text-transform:none;touch-action:manipulation;user-select:none;-webkit-user-select:none;vertical-align:middle;white-space:nowrap}.button-50:focus{text-decoration:none}.button-50:hover{text-decoration:none;transform:scale(1.1)}.button-50:active{box-shadow:rgba(0,0,0,.125) 0 3px 5px inset;outline:0}.button-50:not([disabled]):active{box-shadow:#fff 2px 2px 0 0,#000 2px 2px 0 1px;transform:scale(1.1)}@media(min-width: 768px){.button-50{padding:12px 50px}}#canvas-container{position:relative;display:flex;flex-flow:column nowrap;justify-content:center;align-items:center}#canvas{border-radius:25px;border:5px solid #000;padding:5px}#canvas-buttons{width:80%;display:flex;justify-content:space-around;height:50px;margin:20px 10px}#canvas-buttons div{height:50px}button{height:50px}button *{font-size:25px;font-weight:600}.canvas-input{border:3px solid #000;border-radius:8px;height:50px;background-image:linear-gradient(to right, skyblue, lightgreen);line-height:normal;color:#282828;display:block;width:100px;box-sizing:border-box;user-select:auto;font-size:25px;font-weight:600;padding:0 6px;padding-left:12px;margin:0px 10px}.canvas-input:focus{background-image:linear-gradient(to left, skyblue, lightgreen)}.canvas-button{display:flex;flex-flow:row wrap;align-items:center;align-content:center;justify-content:center;outline:0;height:50px;border:0;cursor:pointer;border-radius:8px;font-size:18px;font-weight:700;line-height:1;transition:transform 200ms,background 200ms;background:rgba(255,255,255,.481);color:#000;box-shadow:0 0 0 3px #000 inset;width:auto;padding:5px}.canvas-button:hover{transform:scale(1.1)}#canvas-buttons>div{display:flex;flex-flow:row wrap}button:hover{transform:scale(1.1)}img#dev-links:hover{transform:translateY(-2px)}.question{cursor:help;width:35px;height:37px;position:absolute;bottom:15%;left:6%}div#tutorial{display:none;width:40%;border-style:solid;border-radius:20px;border-width:3px;padding:20px;border-color:#000;background-color:rgba(240,255,255,.857);position:absolute}.question:hover+div#tutorial{display:flex;flex-flow:column wrap}#code-container{width:100vw;height:100vh;background:none;display:none;align-items:flex-start;justify-content:center;position:relative;padding:10px}pre{width:80%;padding:20px;padding-top:100px;background-color:#fff;border-radius:8px;display:none;margin-bottom:20px}pre#java{display:flex;box-shadow:6px 6px 20px 4px rgba(217,200,21,.532)}pre#ruby{display:none;box-shadow:6px 6px 20px 4px rgba(240,24,85,.532)}pre#python{display:none;box-shadow:0px 6px 20px 4px rgba(74,182,244,.734),6px 0px 20px 4px rgba(253,238,77,.739)}div.code{padding:0;margin:0;display:flex;justify-content:center;width:100%}div.code>div{display:none;flex-flow:row wrap;align-items:center;width:100%;border-width:2px;border-radius:5px;border-style:solid}#javascriptCode{width:50px;height:50px;background:none;border-radius:5px;border-style:solid;border-width:1px;padding:2px;box-shadow:6px 6px 20px 2px rgba(217,200,21,.532)}#rubyCode{width:50px;height:50px;background:none;border-radius:5px;border-style:solid;border-width:1px;padding:2px;box-shadow:6px 6px 20px 2px rgba(240,24,85,.532)}#pythonCode{width:90px;height:50px;background:none;border-radius:5px;border-style:solid;border-width:1px;padding:2px;box-shadow:0px 6px 20px 2px rgba(74,182,244,.734),6px 0px 20px 2px rgba(253,238,77,.739)}#closecode{width:50px;height:50px;background:none;border:none}div.code>ul>li{list-style:none}div.code>ul{margin:0;padding:0;position:absolute;top:40px;width:60%;display:flex;justify-content:space-between}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+#slide-container {
+  width: 100vw;
+  height: 80vh;
+  background: none;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  overflow-y: hidden;
+}
 
-/*# sourceMappingURL=main.css.map*/
+.slides {
+  width: 80%;
+  height: 95%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 6px 20px 2px rgba(120, 162, 210, 0.734);
+}
+
+div.slides > div {
+  display: none;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+}
+
+div.slide:first-of-type {
+  display: flex;
+}
+
+img#prev {
+  transform: rotate(180deg);
+}
+
+#prev,
+#next,
+#close {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+}
+
+div.slides > ul > li {
+  list-style: none;
+}
+
+div.slides > ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.slide h2 {
+  width: 100%;
+  padding-left: 50px;
+}
+
+.slide p {
+  padding: 0px 75px;
+  width: 100%;
+}
+
+img#slide1 {
+  height: 600px;
+  width: 1000px;
+  transform: scale(0.5);
+  object-fit: cover;
+  object-position: center;
+  margin: 0 250px;
+  position: relative;
+  bottom: 150px;
+  margin: auto;
+}
+
+img#slide2 {
+  height: 600px;
+  width: 1000px;
+  transform: scale(0.5);
+  object-fit: cover;
+  object-position: center;
+  margin: 0 250px;
+  position: relative;
+  bottom: 250px;
+  left: 400px;
+}
+
+img#slide3 {
+  height: 300px;
+  width: 400px;
+  object-fit: contain;
+  transform: scale(0.7);
+  margin: auto;
+}
+
+img#slide4 {
+  transform: scale(0.7);
+  margin: auto;
+}
+
+img#slide5 {
+  transform: scale(1.05);
+  margin: auto;
+}
+
+img#slide6 {
+  transform: scale(1.05);
+  margin: auto;
+}
+
+img#slide7 {
+  transform: scale(0.3);
+  position: relative;
+  bottom: 500px;
+  left: 100px;
+  margin: auto;
+}
+
+img#slide8 {
+  transform: scale(0.2);
+  position: relative;
+  bottom: 750px;
+  left: -250px;
+}
+
+* {
+  font-family: "Comfortaa";
+}
+
+pre {
+  font-family: "Cascadia Code", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("https://img.freepik.com/free-vector/low-poly-digital-network-lines-connecting-mesh-background_1017-25547.jpg?w=2000&t=st=1693330149~exp=1693330749~hmac=930f4de40a87e7148c96a1ba5d6885315705eab55b404dec254379dec8d825c9");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  margin: 0;
+  font-family: "Comfortaa";
+  font-size: large;
+  text-decoration: white;
+}
+
+header > h1 {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 15px rgba(120, 162, 210, 0.688);
+}
+
+img,
+button {
+  cursor: pointer;
+}
+
+/* CSS */
+.button-50 {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Comfortaa";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 5px 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
+}
+#canvas-container {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  border-radius: 25px;
+  border: 5px solid rgb(0, 0, 0);
+  padding: 5px;
+}
+
+#canvas-buttons {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  margin: 20px 10px;
+}
+
+#canvas-buttons div {
+  height: 50px;
+}
+
+button {
+  height: 50px;
+}
+
+button * {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.canvas-input {
+  border: 3px solid #000;
+  border-radius: 8px;
+  height: 50px;
+  background-image: linear-gradient(to right, skyblue, lightgreen);
+  line-height: normal;
+  color: #282828;
+  display: block;
+  width: 100px;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 0 6px;
+  padding-left: 12px;
+  margin: 0px 10px;
+}
+
+.canvas-input:focus {
+  background-image: linear-gradient(to left, skyblue, lightgreen);
+}
+
+.canvas-button {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  outline: 0;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: rgba(255, 255, 255, 0.481);
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+  width: auto;
+  padding: 5px;
+}
+
+.canvas-button:hover {
+  transform: scale(1.1);
+}
+
+#canvas-buttons > div {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+img#dev-links:hover {
+  transform: translateY(-2px);
+}
+
+.question {
+  cursor: help;
+  width: 35px;
+  height: 37px;
+  position: absolute;
+  bottom: 15%;
+  left: 6%;
+}
+
+div#tutorial {
+  display: none;
+  width: 40%;
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 3px;
+  padding: 20px;
+  border-color: rgb(0, 0, 0);
+  background-color: rgba(240, 255, 255, 0.857);
+  position: absolute;
+}
+
+.question:hover + div#tutorial {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#code-container {
+  width: 100vw;
+  height: 100vh;
+  background: none;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding: 10px;
+}
+
+pre {
+  width: 80%;
+  padding: 20px;
+  padding-top: 100px;
+  background-color: white;
+  border-radius: 8px;
+  display: none;
+  margin-bottom: 20px;
+}
+
+pre#java {
+  display: flex;
+  box-shadow: 6px 6px 20px 4px rgba(217, 200, 21, 0.532);
+}
+
+pre#ruby {
+  display: none;
+  box-shadow: 6px 6px 20px 4px rgba(240, 24, 85, 0.532);
+}
+
+pre#python {
+  display: none;
+  box-shadow: 0px 6px 20px 4px rgba(74, 182, 244, 0.734), 6px 0px 20px 4px rgba(253, 238, 77, 0.739);
+}
+
+div.code {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+div.code > div {
+  display: none;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+  border-width: 2px;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+#javascriptCode {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  box-shadow: 6px 6px 20px 2px rgba(217, 200, 21, 0.532);
+}
+
+#rubyCode {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  box-shadow: 6px 6px 20px 2px rgba(240, 24, 85, 0.532);
+}
+
+#pythonCode {
+  width: 90px;
+  height: 50px;
+  background: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  box-shadow: 0px 6px 20px 2px rgba(74, 182, 244, 0.734), 6px 0px 20px 2px rgba(253, 238, 77, 0.739);
+}
+
+#closecode {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+}
+
+div.code > ul > li {
+  list-style: none;
+}
+
+div.code > ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 40px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
